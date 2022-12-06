@@ -1,0 +1,16 @@
+@use "utils/a11y"; // Om det inte funkar, byt @use mot @import
+@use "vendor/reset";
+
+@use 'base';
+
+@media screen and (min-width: 400px) {
+    @use 'mobile';
+}
+
+@media screen and (min-width: 600px) {
+    @use 'tablet';
+}
+
+@media screen and (min-width: 1000px) {
+    @use 'desktop';
+}

@@ -1,4 +1,4 @@
-import './style/style.scss';
+import './style/_general.scss';
 
 // All kod härifrån och ner är bara ett exempel för att komma igång
 

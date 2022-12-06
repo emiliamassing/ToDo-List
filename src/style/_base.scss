@@ -1,3 +1,32 @@
 body{
     background-color: #9c9cd5;
+    font-family: Poppins, sans-serif;
 }
+
+section{
+    background-color: rebeccapurple;
+    margin-top: 7vh;
+
+    h1{
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
+.container{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    input[type=text]{
+        width: 18em;
+    }
+
+    button#add-item-btn{
+        width: 7em;
+        margin-top: 8px;
+    }
+}
+

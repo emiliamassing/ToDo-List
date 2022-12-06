@@ -1,3 +1,15 @@
 body{
     background-color: #f5f580;
 }
+
+.container{
+    flex-direction: row;
+
+    input[type=text]{
+        width: 16em;
+    }
+
+    button#add-item-btn{
+        margin-top: unset;
+    }
+}

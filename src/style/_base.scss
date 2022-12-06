@@ -11,6 +11,37 @@ section{
         text-transform: uppercase;
         text-align: center;
     }
+
+    ul{
+        text-transform: uppercase;
+        font-size: 1.2rem;
+
+        li{
+            list-style-type: none;
+            text-transform: lowercase;
+            font-size: 1rem;
+            position: relative;
+
+            i{
+                margin-left: 5px;
+                position: absolute;
+                cursor: pointer;
+            }
+
+            .fa-solid.fa-pen-to-square{
+                right: 40px;
+                margin-right: 7px;
+            }
+
+            .fa-solid.fa-x{
+                right: 20px;
+            }
+        }
+    }
+}
+
+button{
+    cursor: pointer;
 }
 
 .container{

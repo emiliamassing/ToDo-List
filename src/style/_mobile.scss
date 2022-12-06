@@ -4,6 +4,7 @@ body{
 
 .container{
     flex-direction: row;
+    justify-content: space-evenly;
 
     input[type=text]{
         width: 16em;
@@ -13,3 +14,4 @@ body{
         margin-top: unset;
     }
 }
+

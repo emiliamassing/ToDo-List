@@ -1,9 +1,10 @@
 .container{
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 
     input[type=text]{
         width: 16em;
+        margin-right: 10px;
     }
 
     button#add-item-btn{

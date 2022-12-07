@@ -14,8 +14,9 @@
     <main>
       <section>
         <h1>Att göra lista</h1>
-        <div class="container">
+        <div class="btnContainer">
           <button id="darkModeBtn">Dark Mode</button>
+          <button id="addNewListBtn">Lägg till lista</button>
         </div>
         <div class="container">
           <label>
@@ -23,20 +24,20 @@
           </label>
           <button id="add-item-btn">Lägg till</button>
         </div>
-        <ul>
+        <ul id="incompleteTasks">
           <span>Att göra</span>
           <li>
             Starta Datorn
-            <i class="fa-solid fa-pen-to-square fa-lg"></i>
-            <i class="fa-solid fa-x fa-lg"></i>
+            <i class="fa-solid fa-pen-to-square fa-lg" tabindex="0"></i>
+            <i class="fa-solid fa-x fa-lg" tabindex="0"></i>
           </li>
           <li>
             Starta projekt + vs code
-            <i class="fa-solid fa-pen-to-square fa-lg"></i>
-            <i class="fa-solid fa-x fa-lg"></i>
+            <i class="fa-solid fa-pen-to-square fa-lg" tabindex="0"></i>
+            <i class="fa-solid fa-x fa-lg" tabindex="0"></i>
           </li>
         </ul>
-        <ul>
+        <ul id="completedTasks">
           <span>Avklarat</span>
         </ul>
       </section>

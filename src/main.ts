@@ -12,6 +12,8 @@ darkModeBtn?.addEventListener('click', e =>{ // Bättre lösning till denna?
   toggleDarkMode();
 });
 
+
+
 // I denna utils-fil har vi lagrat funktioner som ofta används, t.ex. en "blanda array"-funktion
 import { shuffle } from './utils';
 

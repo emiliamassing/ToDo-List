@@ -4,10 +4,10 @@ import './style/general.scss';
 
 function toggleDarkMode(){
   const body = document.body;
-  body.classList.toggle('darkmode');
+  body.classList.toggle('darkMode');
 }
 
-const darkModeBtn = document.querySelector('#dark-mode-btn');
+const darkModeBtn = document.querySelector('#darkModeBtn');
 darkModeBtn?.addEventListener('click', e =>{ // Bättre lösning till denna?
   toggleDarkMode();
 });

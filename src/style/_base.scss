@@ -1,13 +1,46 @@
+/* stylelint-disable no-descending-specificity */
 @use 'utils/variables' as var;
 
 body{
-    background-color: #9c9cd5;
+    background-color: var.$beigeBgColor;
     font-family: Poppins, sans-serif;
     color: var.$blackTextColor;
+
+    ul{
+        background-color: var.$ulWhiteColor;
+        padding: 5px;
+        margin-left: 5px;
+
+        span{
+            border-bottom: 2px solid var.$blackTextColor;
+        }
+
+        li{
+            &:hover{
+                background-color: #d4d3d3;
+            }
+        }
+    }
+
 }
 
 .darkMode{
-    color:whitesmoke;
+    background-color: var.$dmbgColor;
+    color: var.$dmWhiteColor;
+
+    ul{
+        background-color: var.$ulDmColor;
+
+        span{
+            border-bottom: 2px solid var.$dmWhiteColor;
+        }
+
+        li{
+            &:hover{
+                background-color: #5d4f46;
+            }
+        }
+    }
 }
 
 main{
@@ -15,7 +48,6 @@ main{
 }
 
 section{
-    background-color: rebeccapurple;
     margin-top: 7vh;
 
     h1{
@@ -26,12 +58,18 @@ section{
     ul{
         text-transform: uppercase;
         font-size: 1.2rem;
-
+        min-height: 10vh;
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 10px;
+        
         li{
             list-style-type: none;
             text-transform: lowercase;
             font-size: 1rem;
             position: relative;
+            padding: 7px;
+            margin-top: 5px;
 
             i{
                 margin-left: 5px;
@@ -40,13 +78,13 @@ section{
             }
 
             .fa-solid.fa-pen-to-square{
-                top: 10px;
+                top: 17px;
                 right: 40px;
                 margin-right: 7px;
             }
 
             .fa-solid.fa-x{
-                top: 10px;
+                top: 17px;
                 right: 20px;
             }
         }
@@ -71,6 +109,7 @@ button#darkModeBtn{
 
     input[type=text]{
         width: 18em;
+        background-color: var.$ulWhiteColor;
     }
 
     button#add-item-btn{

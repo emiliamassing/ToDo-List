@@ -2,8 +2,8 @@
 @use 'utils/variables' as var;
 
 body{
-    background-color: var.$beigeBgColor;
-    font-family: Poppins, sans-serif;
+    background-color: var.$whiteBgColor;
+    font-family: 'Poppins', sans-serif;
     color: var.$blackTextColor;
 
     ul{
@@ -37,7 +37,7 @@ body{
 
         li{
             &:hover{
-                background-color: #5d4f46;
+                background-color: #5e5e5e;
             }
         }
     }
@@ -79,13 +79,13 @@ section{
 
             .fa-solid.fa-pen-to-square{
                 top: 17px;
-                right: 40px;
+                right: 30px;
                 margin-right: 7px;
             }
 
             .fa-solid.fa-x{
                 top: 17px;
-                right: 20px;
+                right: 10px;
             }
         }
     }

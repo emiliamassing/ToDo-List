@@ -1,4 +1,4 @@
-.container{
+.inputContainer{
     flex-direction: row;
     justify-content: center;
 
@@ -7,8 +7,14 @@
         margin-right: 10px;
     }
 
-    button#add-item-btn{
+    button#addItemBtn{
         margin-top: unset;
+    }
+}
+
+.tasks{
+    .taskBar{
+        flex-direction: row;
     }
 }
 

@@ -6,6 +6,20 @@ body{
     font-family: 'Poppins', sans-serif;
     color: var.$blackTextColor;
 
+    .inputContainer{
+        input[type=text]{
+           background-color: var.$inputColor;
+        }
+    }
+
+    .tasks{
+        .taskBar{
+            select{
+                background-color: var.$inputColor;
+            }
+        }
+    }
+
     ul{
         background-color: var.$ulWhiteColor;
         padding: 5px;
@@ -27,6 +41,20 @@ body{
 .darkMode{
     background-color: var.$dmbgColor;
     color: var.$dmWhiteColor;
+
+    .inputContainer{
+        input[type=text]{
+            background-color: #c6c6c6;
+        }
+    }
+
+    .tasks{
+        .taskBar{
+            select{
+                background-color: #c6c6c6;
+            }
+        }
+    }
 
     ul{
         background-color: var.$ulDmColor;
@@ -73,6 +101,7 @@ section{
         width: 95%;
         margin: 0 auto;
         margin-top: 10px;
+        border: 2px solid var.$borderColor;
         
         li{
             list-style-type: none;
@@ -81,6 +110,7 @@ section{
             position: relative;
             padding: 7px;
             margin-top: 5px;
+            cursor: pointer;
 
             i{
                 margin-left: 5px;
@@ -105,23 +135,20 @@ section{
 button{
     cursor: pointer;
     border-radius: 4px;
+    height: 2.4em;
     border: 2px solid var.$borderColor;
     background-color: var.$ulWhiteColor;
 
     &:hover{
         transition: 0.3s ease-in-out;
-        background-color: #b4b4b4;
+        background-color: #c4c4c4;
         border: 2px solid #7d7c7c;
     }
 }
 
-button#darkModeBtn, button#addNewListBtn{
+button#darkModeBtn{
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-button#addNewListBtn{
-    margin-left: 10px;
 }
 
 .btnContainer{
@@ -132,7 +159,7 @@ button#addNewListBtn{
     justify-content: center;
 }
 
-.container{
+.inputContainer{
     width: 95%;
     margin: 0 auto;
     display: flex;
@@ -143,17 +170,49 @@ button#addNewListBtn{
         width: 18em;
         border-radius: 4px;
         border: 2px solid var.$borderColor;
-        background-color: var.$ulWhiteColor;
         height: 2.3em;
+        margin-top: 5px;
+        margin-bottom: 5px;
 
         &:focus{
             background-color: #f9f7f7;
         }
     }
 
-    button#add-item-btn{
+    button#addItemBtn{
         width: 7em;
         margin-top: 8px;
     }
 }
 
+.radioInputContainer{
+    margin-bottom: 15px;
+
+    .row{
+        margin: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    input[type=radio]{
+        transform: scale(1.5);
+    }
+}
+
+
+.tasks{
+    .taskBar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        select{
+            height: 2rem;
+            border-radius: 4px;
+            border: 2px solid var.$borderColor;
+            cursor: pointer;
+        }
+    }
+}

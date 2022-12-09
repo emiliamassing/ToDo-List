@@ -10,12 +10,41 @@ darkModeBtn?.addEventListener('click', e =>{ // Bättre lösning till denna?
   toggleDarkMode();
 });
 
-let toDo = ['Starta datorn', 'Öppna VS code', 'Börja koda'];
-const incompleteTasks = document.querySelector('#incompleteTasks');
+let toDoList = ['Starta datorn', 'Öppna VS code', 'Börja koda'];
+const incompleteTasks: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
 
-const task1Name = toDo[0];
-const task1Node = document.createElement('li');
-const task1TextNode = document.createTextNode(task1Name);
+printTaskList();
+
+const addTaskBtn = document.querySelector('#addItemBtn');
+addTaskBtn?.addEventListener('click', addNewTask);
+
+const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
+
+function addNewTask(){
+  if(newTaskName.value.length === 0){
+    alert('You need to write something');
+    return;
+  }
+
+  if(toDoList.indexOf(newTaskName.value) === -1){
+    toDoList?.push(newTaskName.value);
+    printTaskList();
+  } else if(toDoList.indexOf(newTaskName.value) > 1){
+    alert("You've already added this task");
+  }
+}
+
+function printTaskList(){
+  incompleteTasks.innerHTML = '';
+  for(let i = 0; i < toDoList.length; i++){
+    const taskName = toDoList[i];
+    const taskNode = document.createElement('li');
+    const taskTextNode = document.createTextNode(taskName);
+    taskNode.appendChild(taskTextNode);
+  
+    incompleteTasks?.appendChild(taskNode);
+  }
+}
 
 
 // I denna utils-fil har vi lagrat funktioner som ofta används, t.ex. en "blanda array"-funktion

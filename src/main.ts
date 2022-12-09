@@ -44,8 +44,21 @@ function printTaskList(){
   
     incompleteTasks?.appendChild(taskNode);
   }
+
+  const tasks = Array.from(document.querySelectorAll('li'));
+  tasks.forEach((task) => {
+    task.addEventListener('click', removeTask); //Potentiell minnesläcka
+  });
 }
 
+function removeTask(e: Event){
+  const target = e.target as HTMLElement;
+  const index = toDoList.indexOf(target.innerHTML);
+  if(index > -1){
+    toDoList.splice(index, 1);
+    printTaskList();
+  }
+}
 
 // I denna utils-fil har vi lagrat funktioner som ofta används, t.ex. en "blanda array"-funktion
 //import { shuffle } from './utils';

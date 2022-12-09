@@ -12,30 +12,29 @@ body{
         }
     }
 
-    .tasks{
+    .toDoContainer{
+        background-color: var.$toDoWhiteColor;
         .taskBar{
             select{
                 background-color: var.$inputColor;
             }
         }
-    }
-
-    ul{
-        background-color: var.$ulWhiteColor;
-        padding: 5px;
-        margin-left: 5px;
-
-        span{
-            border-bottom: 2px solid var.$blackTextColor;
-        }
-
-        li{
-            &:hover{
-                background-color: #d4d3d3;
+    
+        ul{
+            padding: 5px;
+            margin-left: 5px;
+    
+            span{
+                border-bottom: 2px solid var.$blackTextColor;
             }
-        }
+    
+            li{
+                &:hover{
+                    background-color: #d4d3d3;
+                }
+            }
+        }    
     }
-
 }
 
 .darkMode{
@@ -47,31 +46,32 @@ body{
             background-color: #c6c6c6;
         }
     }
+    
+    .toDoContainer{
+        background-color: var.$toDoDmColor;
 
-    .tasks{
         .taskBar{
             select{
                 background-color: #c6c6c6;
             }
         }
-    }
+    
+        ul{
 
-    ul{
-        background-color: var.$ulDmColor;
-
-        span{
-            border-bottom: 2px solid var.$dmWhiteColor;
-        }
-
-        li{
-            &:hover{
-                background-color: #5e5e5e;
+            span{
+                border-bottom: 2px solid var.$dmWhiteColor;
+            }
+    
+            li{
+                &:hover{
+                    background-color: #5e5e5e;
+                }
             }
         }
     }
 
     button{
-        background-color: var.$ulDmColor;
+        background-color: var.$toDoDmColor;
         color: var.$dmWhiteColor;
         border: 2px solid #393838;
 
@@ -94,39 +94,64 @@ section{
         text-align: center;
     }
 
-    ul{
-        text-transform: uppercase;
-        font-size: 1.2rem;
-        min-height: 10vh;
+    .toDoContainer{
         width: 95%;
         margin: 0 auto;
-        margin-top: 10px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
         border: 2px solid var.$borderColor;
-        
-        li{
-            list-style-type: none;
-            text-transform: lowercase;
-            font-size: 1rem;
-            position: relative;
-            padding: 7px;
-            margin-top: 5px;
-            cursor: pointer;
 
-            i{
-                margin-left: 5px;
-                position: absolute;
+        span{
+            margin-left: 10px;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid var.$blackTextColor;
+        }
+
+        .taskBar{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+    
+            select{
+                margin-top: 10px;
+                margin-right: 10px;
+                height: 2rem;
+                border-radius: 4px;
+                border: 2px solid var.$borderColor;
                 cursor: pointer;
             }
+        }
 
-            .fa-solid.fa-pen-to-square{
-                top: 17px;
-                right: 30px;
-                margin-right: 7px;
-            }
-
-            .fa-solid.fa-x{
-                top: 17px;
-                right: 10px;
+        ul{
+            min-height: 10vh;
+            margin: 0;
+            
+            li{
+                list-style-type: none;
+                text-transform: lowercase;
+                font-size: 1rem;
+                position: relative;
+                padding: 7px;
+                margin-top: 5px;
+                cursor: pointer;
+    
+                i{
+                    margin-left: 5px;
+                    position: absolute;
+                    cursor: pointer;
+                }
+    
+                .fa-solid.fa-pen-to-square{
+                    top: 17px;
+                    right: 30px;
+                    margin-right: 7px;
+                }
+    
+                .fa-solid.fa-x{
+                    top: 17px;
+                    right: 10px;
+                }
             }
         }
     }
@@ -137,7 +162,7 @@ button{
     border-radius: 4px;
     height: 2.4em;
     border: 2px solid var.$borderColor;
-    background-color: var.$ulWhiteColor;
+    background-color: var.$toDoWhiteColor;
 
     &:hover{
         transition: 0.3s ease-in-out;
@@ -171,18 +196,19 @@ button#darkModeBtn{
         border-radius: 4px;
         border: 2px solid var.$borderColor;
         height: 2.3em;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
 
         &:focus{
             background-color: #f9f7f7;
         }
     }
 
-    button#addItemBtn{
-        width: 7em;
-        margin-top: 8px;
-    }
+}
+
+button#addItemBtn{
+    width: 7em;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .radioInputContainer{
@@ -202,21 +228,5 @@ button#darkModeBtn{
 
     i.category{
         margin-right: 3px;
-    }
-}
-
-
-.tasks{
-    .taskBar{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        select{
-            height: 2rem;
-            border-radius: 4px;
-            border: 2px solid var.$borderColor;
-            cursor: pointer;
-        }
     }
 }

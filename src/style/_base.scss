@@ -14,19 +14,20 @@ body{
 
     .toDoContainer{
         background-color: var.$toDoWhiteColor;
+
         .taskBar{
             select{
                 background-color: var.$inputColor;
             }
         }
     
+        span{
+            border-bottom: 2px solid var.$blackTextColor;
+        }
+
         ul{
             padding: 5px;
             margin-left: 5px;
-    
-            span{
-                border-bottom: 2px solid var.$blackTextColor;
-            }
     
             li{
                 &:hover{
@@ -55,12 +56,12 @@ body{
                 background-color: #c6c6c6;
             }
         }
+
+        span{
+            border-bottom: 2px solid var.$dmWhiteColor;
+        }
     
         ul{
-
-            span{
-                border-bottom: 2px solid var.$dmWhiteColor;
-            }
     
             li{
                 &:hover{
@@ -79,6 +80,10 @@ body{
             background-color: #5b5a5a;
             border: 2px solid #3d3d3d;
         }
+    }
+
+    i{
+        color: #333;
     }
 }
 
@@ -105,7 +110,6 @@ section{
             margin-left: 10px;
             margin-top: 10px;
             font-size: 1.2rem;
-            border-bottom: 2px solid var.$blackTextColor;
         }
 
         .taskBar{

@@ -6,9 +6,7 @@ function toggleDarkMode(){
 }
 
 const darkModeBtn = document.querySelector('#darkModeBtn');
-darkModeBtn?.addEventListener('click', e =>{ // Bättre lösning till denna?
-  toggleDarkMode();
-});
+darkModeBtn?.addEventListener('click', toggleDarkMode);
 
 let toDoList = ['Starta datorn', 'Öppna VS code', 'Börja koda'];
 const incompleteTasks: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;

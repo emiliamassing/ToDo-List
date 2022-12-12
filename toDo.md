@@ -21,4 +21,13 @@ För VG -
 - Uppgifter som förfaller inom 5 dagar ska också förtydligas
 - Det ska gå att kategorisera uppgifter med hjälp av symboler. Minst 3 kategorier.
 
-Kategorier jag tänkt mig: Ska prioriteras/viktigast, jobb, fritid
+Kategorier jag tänkt mig: Ska prioriteras/viktigast, jobb, fritid, hushåll/hem.
+
+Klass för punkterna på To-do listan bör innehålla:
+Namn (Bestäms genom inputrutan)
+Deadline
+Om punkten är klar eller inte (Boolean - false från början)
+Datum då punkten lades till
+
+
+Lägger fokus på JavaScript/Typescript i första hand, skulle jag få tid över kan jag göra sidan finare.

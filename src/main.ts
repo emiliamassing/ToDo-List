@@ -1,6 +1,7 @@
 import './style/general.scss';
 import ToDoItem from './toDoItem';
 
+// Funktion för dark mode
 function toggleDarkMode() {
   const bodyElement = document.body;
   bodyElement.classList.toggle('darkMode');
@@ -12,6 +13,7 @@ darkModeBtn?.addEventListener('click', toggleDarkMode);
 const toDoList = ['Starta datorn', 'Öppna VS code', 'Börja koda'];
 const incompleteTasks: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
 
+// Funktion för att skriva ut en ny todo
 function printTaskList() {
   incompleteTasks.innerHTML = '';
   for (let i = 0; i < toDoList.length; i++) {
@@ -29,6 +31,7 @@ function printTaskList() {
   });
 }
 
+// Funktion för att ta bort todo
 function removeTask(e: Event) {
   const target = e.target as HTMLElement;
   const index = toDoList.indexOf(target.innerHTML);
@@ -42,6 +45,7 @@ printTaskList();
 
 const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
 
+// Funktion för att lägga till ny todo
 function addNewTask() {
   if (newTaskName.value.length === 0) {
     alert('You need to write something');

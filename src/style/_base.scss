@@ -12,6 +12,12 @@ body{
         }
     }
 
+    .radioInputContainer{
+        label{
+            background-color: var.$toDoWhiteColor;
+        }
+    }
+
     .toDoContainer{
         background-color: var.$toDoWhiteColor;
 
@@ -48,6 +54,12 @@ body{
         }
     }
     
+    .radioInputContainer{
+        label{
+            background-color: var.$toDoDmColor;
+        }
+    }
+    
     .toDoContainer{
         background-color: var.$toDoDmColor;
 
@@ -80,10 +92,6 @@ body{
             background-color: #5b5a5a;
             border: 2px solid #3d3d3d;
         }
-    }
-
-    i{
-        color: #333;
     }
 }
 
@@ -186,6 +194,11 @@ button#darkModeBtn{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    span.category{
+        margin-top: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
 }
 
 .inputContainer{
@@ -211,23 +224,31 @@ button#darkModeBtn{
 
 button#addItemBtn{
     width: 7em;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
 }
 
 .radioInputContainer{
-    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+    width: 90%;
+    margin: 0 auto;
 
-    .row{
-        margin: 10px;
+    label{
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        border: 2px solid var.$borderColor;
+        border-radius: 4px;
     }
 
     input[type=radio]{
         transform: scale(1.5);
+        margin-bottom: 5px;
     }
 
     i.category{

@@ -1,4 +1,4 @@
-type Categories = 'important' | 'work' | 'spareTime' | 'household';
+type Categories = 'important' | 'work' | 'spareTime' | 'household'; // ta ev bort denna och byt till string
 
 class ToDoItem {
   taskName: string;
@@ -20,8 +20,6 @@ class ToDoItem {
   }
 }
 
-let incompleteTasks: ToDoItem[] = [];
+let incompleteTaskList: ToDoItem[] = [];
 
 export default ToDoItem;
-
-// enbart tillfälligt angivna som tomma värden

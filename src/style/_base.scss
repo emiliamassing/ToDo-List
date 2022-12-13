@@ -110,9 +110,6 @@ body{
 
 main{
     width: 100%;
-}
-
-section{
     margin-top: 7vh;
 
     h1{
@@ -120,6 +117,46 @@ section{
         text-align: center;
     }
 
+    .radioInputContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 20px;
+        width: 90%;
+        margin: 0 auto;
+    
+        :hover{
+            transition: 0.3s ease-in-out;
+            background-color: #c4c4c4;
+            border: 2px solid #7d7c7c;
+        }
+    
+        label{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border: 2px solid var.$borderColor;
+            border-radius: 4px;
+            cursor: pointer;
+    
+            :hover{
+                border: none;
+            }
+        }
+    
+        input[type=radio]{
+            transform: scale(1.5);
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+    
+        i.category{
+            margin-right: 3px;
+        }
+    }
+    
     .toDoContainer{
         width: 95%;
         margin: 0 auto;
@@ -264,32 +301,4 @@ button#addItemBtn{
     width: 7em;
     margin-top: 1.3rem;
     margin-bottom: 1.3rem;
-}
-
-.radioInputContainer{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 20px;
-    width: 90%;
-    margin: 0 auto;
-
-    label{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        border: 2px solid var.$borderColor;
-        border-radius: 4px;
-    }
-
-    input[type=radio]{
-        transform: scale(1.5);
-        margin-bottom: 5px;
-    }
-
-    i.category{
-        margin-right: 3px;
-    }
 }

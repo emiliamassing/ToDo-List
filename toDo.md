@@ -31,3 +31,7 @@ Datum då punkten lades till
 
 
 Lägger fokus på JavaScript/Typescript i första hand, skulle jag få tid över kan jag göra sidan finare.
+
+Lägg till:
+Felmeddelande om rutan inte fylls i korrekt
+notis om att punkten lades till - (typ task added)

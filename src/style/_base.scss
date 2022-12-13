@@ -1,6 +1,19 @@
 /* stylelint-disable no-descending-specificity */
 @use 'utils/variables' as var;
 
+.toggleHidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 body{
     background-color: var.$whiteBgColor;
     font-family: 'Poppins', sans-serif;
@@ -208,16 +221,41 @@ button#darkModeBtn{
     flex-wrap: wrap;
     justify-content: space-around;
 
-    input[type=text]{
-        width: 18em;
-        border-radius: 4px;
-        border: 2px solid var.$borderColor;
-        height: 2.3em;
-        margin-bottom: 10px;
+    .formControl{
+        position: relative;
 
-        &:focus{
-            background-color: #f9f7f7;
+        input[type=text]{
+            width: 18em;
+            border-radius: 4px;
+            border: 2px solid var.$borderColor;
+            height: 2.3em;
+            margin-bottom: 10px;
+    
+            &:focus{
+                background-color: #f9f7f7;
+            }
         }
+
+       i{
+            position: absolute;
+            top: 17px;
+            right: 10px;
+            visibility: hidden;
+       }
+
+       small{
+            position: absolute;
+            left: 3px;
+            top: 40px;
+       }
+    }
+
+    .formControl.error input, .formControl.error small{
+        color: var.$errorColor;
+    }
+
+    .formControl.error i.fa-circle-xmark{
+        visibility: visible;
     }
 
 }

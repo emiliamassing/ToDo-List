@@ -20,6 +20,4 @@ class ToDoItem {
   }
 }
 
-let incompleteTaskList: ToDoItem[] = [];
-
 export default ToDoItem;

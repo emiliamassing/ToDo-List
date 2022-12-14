@@ -1,6 +1,8 @@
 import './style/general.scss';
 import ToDoItem from './toDoItem';
 
+const toDoList: ToDoItem[] = [];
+
 // Funktion för dark mode
 function toggleDarkMode() {
   const bodyElement = document.body;
@@ -10,7 +12,7 @@ function toggleDarkMode() {
 const darkModeBtn = document.querySelector('#darkModeBtn');
 darkModeBtn?.addEventListener('click', toggleDarkMode);
 
-const toDoList = ['Starta datorn', 'Öppna VS code', 'Börja koda'];
+// const toDoList = ['Starta datorn', 'Öppna VS code', 'Börja koda'];
 const incompleteTasks: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
 
 // Funktion för att skriva ut en ny todo
@@ -27,7 +29,7 @@ function printTaskList() {
 
   const tasks = Array.from(document.querySelectorAll('li'));
   tasks.forEach((task) => {
-    task.addEventListener('click', removeTask); // Potentiell minnesläcka
+    task.addEventListener('click', removeTask); // eslint-disable-line
   });
 }
 

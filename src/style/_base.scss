@@ -52,7 +52,7 @@ body{
     
             li{
                 &:hover{
-                    background-color: #d4d3d3;
+                   background-color: #f4a6e2b9;
                 }
             }
         }    
@@ -71,16 +71,21 @@ body{
     }
     
     .radioInputContainer{
+
         label{
             background-color: var.$toDoDmColor;
-            border: 2px solid #352854;
+            border: 2px solid var.$dmBorderColor;
 
+            &:hover{
+                background-color: var.$dmHoverColor;
+                border: 2px solid var.$dmBorderColor;
+            }
         }
     }
     
     .toDoContainer{
         background-color: var.$toDoDmColor;
-        border: 2px solid #352854;
+        border: 2px solid var.$dmBorderColor;
 
         .taskBar{
             select{
@@ -96,7 +101,7 @@ body{
     
             li{
                 &:hover{
-                    background-color: #5e5e5e;
+                    background-color: #5f3270b0;
                 }
             }
         }
@@ -105,11 +110,11 @@ body{
     button{
         background-color: var.$toDoDmColor;
         color: var.$dmWhiteColor;
-        border: 2px solid #352854;
+        border: 2px solid var.$dmBorderColor;
 
         &:hover{
-            background-color: #5b5a5a;
-            border: 2px solid #3d3d3d;
+            background-color: var.$dmHoverColor;
+            border: 2px solid #43326a;
         }
     }
 }
@@ -134,8 +139,8 @@ main{
     
         :hover{
             transition: 0.3s ease-in-out;
-            background-color: #c4c4c4;
-            border: 2px solid #7d7c7c;
+            background-color: #f7c6ecb9;
+            border: 2px solid #bf7abf;
         }
     
         label{
@@ -154,7 +159,7 @@ main{
     
         input[type=radio]{
             transform: scale(1.5);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             cursor: pointer;
         }
     
@@ -251,8 +256,8 @@ button{
 
     &:hover{
         transition: 0.3s ease-in-out;
-        background-color: #c4c4c4;
-        border: 2px solid #7d7c7c;
+        background-color: #d58de5db;
+        border: 2px solid #ec90ec;
     }
 }
 

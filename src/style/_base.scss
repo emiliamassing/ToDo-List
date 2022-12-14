@@ -73,11 +73,14 @@ body{
     .radioInputContainer{
         label{
             background-color: var.$toDoDmColor;
+            border: 2px solid #352854;
+
         }
     }
     
     .toDoContainer{
         background-color: var.$toDoDmColor;
+        border: 2px solid #352854;
 
         .taskBar{
             select{
@@ -102,7 +105,7 @@ body{
     button{
         background-color: var.$toDoDmColor;
         color: var.$dmWhiteColor;
-        border: 2px solid #393838;
+        border: 2px solid #352854;
 
         &:hover{
             background-color: #5b5a5a;
@@ -157,6 +160,22 @@ main{
     
         i.category{
             margin-right: 3px;
+        }
+
+        .fa-circle-exclamation {
+            color: #ad4b75;
+        }
+
+        .fa-briefcase {
+            color: #eb7ea0;
+        }
+
+        .fa-star {
+            color: #4c427a;
+        }
+
+        .fa-house {
+            color: #2f4bc7;
         }
     }
     

@@ -20,7 +20,7 @@ body{
     color: var.$blackTextColor;
 
     .inputContainer{
-        input[type=text]{
+        input[type=text], input[type=date]{
            background-color: var.$inputColor;
         }
     }
@@ -62,7 +62,7 @@ body{
     color: var.$dmWhiteColor;
 
     .inputContainer{
-        input[type=text]{
+        input[type=text], input[type=date]{
             background-color: #c6c6c6;
         }
     }
@@ -163,6 +163,7 @@ main{
         text-transform: uppercase;
         margin-bottom: 20px;
         border: 2px solid var.$borderColor;
+        border-radius: 4px;
 
         span{
             margin-left: 10px;
@@ -245,7 +246,7 @@ button#darkModeBtn{
     flex-wrap: wrap;
     justify-content: center;
 
-    span.category{
+    span.text{
         margin-top: 1.3rem;
         margin-bottom: 0.8rem;
     }
@@ -257,6 +258,18 @@ button#darkModeBtn{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+
+    input[type=date]{
+        width: 18em;
+        border-radius: 4px;
+        border: 2px solid var.$borderColor;
+        height: 2.3em;
+        margin-bottom: 10px;
+
+        &:focus{
+            background-color: #f9f7f7;
+        }
+    }
 
     .formControl{
         position: relative;
@@ -299,6 +312,6 @@ button#darkModeBtn{
 
 button#addItemBtn{
     width: 7em;
-    margin-top: 1.3rem;
-    margin-bottom: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
 }

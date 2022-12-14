@@ -22,14 +22,14 @@
         <div class="inputContainer">
           <div class="formControl">
             <label>
-              <input type="text" name="writeItem" id="writeItem">
+              <input type="text" name="writeItem" id="writeItem" placeholder="Add new task">
               <i class="fa-regular fa-circle-xmark fa-lg"></i>
               <small class="toggleHidden">Error Message</small>
             </label>
           </div>
         </div>
         <div class="btnContainer">
-          <span class="category">Add category</span>
+          <span class="text">Add Category</span>
         </div>
         <div class="radioInputContainer">
               <label>
@@ -48,6 +48,15 @@
               <input type="radio" name="radio" id="household">
               <span><i class="fa-solid fa-house category"></i>Household</span>
             </label>
+        </div>
+        <!--Lägg till att välja deadline här-->
+        <div class="btnContainer">
+          <span class="text">Choose Deadline</span>
+        </div>
+        <div class="inputContainer">
+          <label>
+            <input type="date" name="date" id="date">
+          </label>
         </div>
         <div class="btnContainer">
           <button id="addItemBtn">Add ToDo</button>

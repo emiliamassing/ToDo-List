@@ -16,6 +16,8 @@
 
 body{
     background-color: var.$whiteBgColor;
+    background-image: url(/public/img/background.jpg);
+    background-repeat: no-repeat;
     font-family: 'Poppins', sans-serif;
     color: var.$blackTextColor;
 
@@ -59,6 +61,7 @@ body{
 
 .darkMode{
     background-color: var.$dmbgColor;
+    background-image: url(/public/img/dmBackground.jpg);
     color: var.$dmWhiteColor;
 
     .inputContainer{

@@ -23,12 +23,6 @@ För VG -
 
 Kategorier jag tänkt mig: Ska prioriteras/viktigast, jobb, fritid, hushåll/hem.
 
-Klass för punkterna på To-do listan bör innehålla:
-Namn (Bestäms genom inputrutan)
-Deadline
-Om punkten är klar eller inte (Boolean - false från början)
-Datum då punkten lades till
-
 
 Lägger fokus på JavaScript/Typescript i första hand, skulle jag få tid över kan jag göra sidan finare.
 

@@ -4,7 +4,7 @@ import ToDoItem from './toDoItem';
 const toDoList: ToDoItem[] = [];
 
 // Funktion för dark mode
-function toggleDarkMode() {
+function toggleDarkMode(): void {
   const bodyElement = document.body;
   bodyElement.classList.toggle('darkMode');
 }
@@ -12,21 +12,20 @@ function toggleDarkMode() {
 const darkModeBtn = document.querySelector('#darkModeBtn');
 darkModeBtn?.addEventListener('click', toggleDarkMode);
 
-// const toDoList = ['Starta datorn', 'Öppna VS code', 'Börja koda'];
 const incompleteTasks: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
 
-// Kod för att skriva ut li-elementen - Be om hjälp med detta
+// Kod för att skriva ut li-elementen - Be om hjälp med detta, ifall det är bättre att göra såhär?
 // Ska även innehålla deadline + vald kategori
 const toDoListHtml = `
   <li>
-    <input type="checkbox">
+    <input type="checkbox" class="checkCompleted">
     <i class="fa-solid fa-pen-to-square fa-lg" tabindex="0"></i>
     <i class="fa-solid fa-x fa-lg" tabindex="0"></i>
   </li>
 `;
 
 // Funktion för att skriva ut en ny todo
-function printTaskList() {
+function printTaskList(): void {
   incompleteTasks.innerHTML = '';
 
   for (let i = 0; i < toDoList.length; i++) {
@@ -82,7 +81,7 @@ printTaskList();
 const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
 
 // Funktion för att lägga till ny todo
-function addNewTask() {
+function addNewTask():void {
   if (newTaskName.value.length === 0) {
     alert('You need to write something');
     return;

@@ -15,6 +15,16 @@ darkModeBtn?.addEventListener('click', toggleDarkMode);
 // const toDoList = ['Starta datorn', 'Öppna VS code', 'Börja koda'];
 const incompleteTasks: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
 
+// Kod för att skriva ut li-elementen - Be om hjälp med detta
+// Ska även innehålla deadline + vald kategori
+const toDoListHtml = `
+  <li>
+    <input type="checkbox">
+    <i class="fa-solid fa-pen-to-square fa-lg" tabindex="0"></i>
+    <i class="fa-solid fa-x fa-lg" tabindex="0"></i>
+  </li>
+`;
+
 // Funktion för att skriva ut en ny todo
 function printTaskList() {
   incompleteTasks.innerHTML = '';
@@ -36,6 +46,8 @@ function printTaskList() {
     const removeIconTextNode = document.createTextNode('Delete');
     removeIcon.setAttribute('data-name', taskName);
     removeIcon.appendChild(removeIconTextNode); */
+
+    // Dubbelkolla att nedanstående text är okej innan du raderar de övre blockkomentarerna
 
     const removeIcon = document.createElement('i');
     removeIcon.classList.add('fa-solid');

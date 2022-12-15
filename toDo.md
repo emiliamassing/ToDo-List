@@ -8,9 +8,8 @@ Vad sidan bör innehålla -
 
 
 Vad listan bör innehålla -
-- Möjlighet att ge listan en rubrik?
 ✓ Du ska kunna lägga till saker på listan
-- Du ska kunna ta bort saker från listan
+✓ Du ska kunna ta bort saker från listan
 - Kunna ändra listan. Alltså redigera listans innehåll
 - Förtydling som visar om du klarat av/är klar med punkten på listan eller inte (Kan lösas med symbol/överstrykning)
 - Välja om punkten ska kryssas av eller inte genom att klicka på den
@@ -26,6 +25,6 @@ Kategorier jag tänkt mig: Ska prioriteras/viktigast, jobb, fritid, hushåll/hem
 
 Lägger fokus på JavaScript/Typescript i första hand, skulle jag få tid över kan jag göra sidan finare.
 
-Lägg till:
+Lägg till ifall du hinner:
 Felmeddelande om rutan inte fylls i korrekt
 notis om att punkten lades till - (typ task added)

@@ -18,16 +18,38 @@ const incompleteTasks: HTMLElement = document.querySelector('#incompleteTasks') 
 // Funktion för att skriva ut en ny todo
 function printTaskList() {
   incompleteTasks.innerHTML = '';
+
   for (let i = 0; i < toDoList.length; i++) {
     const taskName = toDoList[i];
     const taskNode = document.createElement('li');
     const taskTextNode = document.createTextNode(taskName);
-    taskNode.appendChild(taskTextNode);
 
+    // const editIcon = document.createElement('button');
+    // const editIconTextNode = document.createTextNode('edit');
+    // editIcon.classList.add('i');
+    const editIcon = document.createElement('i');
+    editIcon.classList.add('fa-solid');
+    editIcon.classList.add('fa-pen-to-square');
+    editIcon.classList.add('fa-lg');
+
+    /* const removeIcon = document.createElement('button');
+    const removeIconTextNode = document.createTextNode('Delete');
+    removeIcon.setAttribute('data-name', taskName);
+    removeIcon.appendChild(removeIconTextNode); */
+
+    const removeIcon = document.createElement('i');
+    removeIcon.classList.add('fa-solid');
+    removeIcon.classList.add('fa-x');
+    removeIcon.classList.add('fa-lg');
+    removeIcon.setAttribute('data-name', taskName);
+
+    taskNode.appendChild(taskTextNode);
+    taskNode.appendChild(editIcon);
+    taskNode.appendChild(removeIcon);
     incompleteTasks?.appendChild(taskNode);
   }
 
-  const tasks = Array.from(document.querySelectorAll('li'));
+  const tasks = Array.from(document.querySelectorAll('li i.fa-x'));
   tasks.forEach((task) => {
     task.addEventListener('click', removeTask); // eslint-disable-line
   });
@@ -36,7 +58,7 @@ function printTaskList() {
 // Funktion för att ta bort todo
 function removeTask(e: Event) {
   const target = e.target as HTMLElement;
-  const index = toDoList.indexOf(target.innerHTML);
+  const index = toDoList.indexOf(target.dataset.name);
   if (index > -1) {
     toDoList.splice(index, 1);
     printTaskList();

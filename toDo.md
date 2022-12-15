@@ -9,7 +9,7 @@ Vad sidan bör innehålla -
 
 Vad listan bör innehålla -
 - Möjlighet att ge listan en rubrik?
-- Du ska kunna lägga till saker på listan
+✓ Du ska kunna lägga till saker på listan
 - Du ska kunna ta bort saker från listan
 - Kunna ändra listan. Alltså redigera listans innehåll
 - Förtydling som visar om du klarat av/är klar med punkten på listan eller inte (Kan lösas med symbol/överstrykning)

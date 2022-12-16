@@ -19,51 +19,52 @@
         <div class="btnContainer">
           <span>New ToDo</span>
         </div>
-        <div class="inputContainer">
-          <div class="formControl">
+        <form>
+          <div class="inputContainer">
+            <div class="formControl">
+              <label>
+                <input type="text" name="writeItem" id="writeItem" placeholder="Add new task">
+                <i class="fa-regular fa-circle-xmark fa-lg"></i>
+                <small class="toggleHidden">Error Message</small>
+              </label>
+            </div>
+          </div>
+          <div class="btnContainer">
+            <span class="text">Add Category</span>
+          </div>
+          <div class="radioInputContainer">
+                <label>
+                  <input type="radio" name="radio" id="important">
+                  <span><i class="fa-solid fa-circle-exclamation category"></i>Important</span>
+                </label>
+              <label>
+                <input type="radio" name="radio" id="work">
+                <span><i class="fa-solid fa-briefcase category"></i>Work</span>
+              </label>
+              <label>
+                <input type="radio" name="radio" id="spareTime">
+                <span><i class="fa-solid fa-star category"></i>Spare Time</span>
+              </label>
+              <label>
+                <input type="radio" name="radio" id="household">
+                <span><i class="fa-solid fa-house category"></i>Household</span>
+              </label>
+          </div>
+          <div class="btnContainer">
+            <span class="text">Choose Deadline</span>
+          </div>
+          <div class="inputContainer">
             <label>
-              <input type="text" name="writeItem" id="writeItem" placeholder="Add new task">
-              <i class="fa-regular fa-circle-xmark fa-lg"></i>
-              <small class="toggleHidden">Error Message</small>
+              <input type="date" name="date" id="date">
             </label>
           </div>
-        </div>
-        <div class="btnContainer">
-          <span class="text">Add Category</span>
-        </div>
-        <div class="radioInputContainer">
-              <label>
-                <input type="radio" name="radio" id="important">
-                <span><i class="fa-solid fa-circle-exclamation category"></i>Important</span>
-              </label>
-            <label>
-              <input type="radio" name="radio" id="work">
-              <span><i class="fa-solid fa-briefcase category"></i>Work</span>
-            </label>
-            <label>
-              <input type="radio" name="radio" id="spareTime">
-              <span><i class="fa-solid fa-star category"></i>Spare Time</span>
-            </label>
-            <label>
-              <input type="radio" name="radio" id="household">
-              <span><i class="fa-solid fa-house category"></i>Household</span>
-            </label>
-        </div>
-        <!--Lägg till att välja deadline här-->
-        <div class="btnContainer">
-          <span class="text">Choose Deadline</span>
-        </div>
-        <div class="inputContainer">
-          <label>
-            <input type="date" name="date" id="date">
-          </label>
-        </div>
-        <div class="btnContainer">
-          <button id="addItemBtn">Add ToDo</button>
-        </div>
+          <div class="btnContainer">
+            <button id="addItemBtn">Add ToDo</button>
+          </div>
+        </form>
         <div class="toDoContainer">
           <div class="taskBar">
-            <span>To do</span>
+            <span class="heading">To do</span>
             <select name="sort" id="sort" aria-label="Sortera">
               <option autofocus value>Sort by:</option>
               <option value="deadline">Deadline</option>
@@ -77,7 +78,7 @@
         </div>
         <div class="toDoContainer">
           <div class="taskBar"> <!--Kanske ingen optimal lösning men rätt CSS applicerades ej på span annars-->
-            <span>Completed</span>
+            <span class="heading">Completed</span>
           </div>
           <ul id="completedTasks">
             <li>Finish HTML-structure</li>

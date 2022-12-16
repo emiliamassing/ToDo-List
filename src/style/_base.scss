@@ -42,7 +42,7 @@ body{
             }
         }
     
-        span{
+        span.heading{
             border-bottom: 2px solid var.$blackTextColor;
         }
 
@@ -66,7 +66,7 @@ body{
 
     .inputContainer{
         input[type=text], input[type=date]{
-            background-color: #c6c6c6;
+            background-color: #d5d5d5;
         }
     }
     
@@ -93,13 +93,18 @@ body{
             }
         }
 
-        span{
+        span.heading{
             border-bottom: 2px solid var.$dmWhiteColor;
         }
     
         ul{
     
             li{
+
+                input[type=text]{
+                    color: var.$dmWhiteColor;
+                }
+
                 &:hover{
                     background-color: #5f3270b0;
                 }
@@ -192,7 +197,7 @@ main{
         border: 2px solid var.$borderColor;
         border-radius: 4px;
 
-        span{
+        span.heading{
             margin-left: 10px;
             margin-top: 10px;
             font-size: 1.2rem;
@@ -234,7 +239,7 @@ main{
                 }
 
                 input[type=text]{
-                    width: 60%;
+                    width: 55%;
                     appearance: none;
                     border: none;
                     background: none;

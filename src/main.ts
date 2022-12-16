@@ -29,7 +29,7 @@ function printTaskList(): void {
   incompleteTasks.innerHTML = '';
 
   for (let i = 0; i < toDoList.length; i++) {
-    const taskName = toDoList[i];
+    const taskName = toDoList[i].taskName;
     const taskNode = document.createElement('li');
     const taskTextNode = document.createTextNode(taskName);
 
@@ -40,6 +40,8 @@ function printTaskList(): void {
     editIcon.classList.add('fa-solid');
     editIcon.classList.add('fa-pen-to-square');
     editIcon.classList.add('fa-lg');
+
+    editIcon.setAttribute('tabindex', '0'); // 0 gör så att browsern själv avgör i vilken ordning element ska tabbas igenom, bäst att låta det vara så utifrån a11y
 
     /* const removeIcon = document.createElement('button');
     const removeIconTextNode = document.createTextNode('Delete');
@@ -69,7 +71,8 @@ function printTaskList(): void {
 // Funktion för att ta bort todo
 function removeTask(e: Event) {
   const target = e.target as HTMLElement;
-  const index = toDoList.indexOf(target.dataset.name);
+  const index = toDoList.findIndex(task => task.taskName === target.dataset.name); // Då du nu har objekt i din array, så måste vi leta efter dessa på ett annat sätt
+  // const index = toDoList.indexOf(target.dataset.name);
   if (index > -1) {
     toDoList.splice(index, 1);
     printTaskList();
@@ -87,10 +90,13 @@ function addNewTask():void {
     return;
   }
 
-  if (toDoList.indexOf(newTaskName.value) === -1) {
-    toDoList?.push(newTaskName.value);
+  const index = toDoList.findIndex(task => task.taskName === newTaskName.value); // Då du nu har objekt i din array, så måste vi leta efter dessa på ett annat sätt
+
+  if (index === -1) {
+    // TODO: Fyll på med rätt data för kategori, deadline, dateAdded
+    toDoList?.push(new ToDoItem(newTaskName.value, 'household', 'deadline', 'dateAdded', false)); // pusha in som en "instans av din ToDoItem-klass" istället
     printTaskList();
-  } else if (toDoList.indexOf(newTaskName.value) > 1) {
+  } else { // Räcker med en else bara, behövs ingen else if :)
     alert("You've already added this task");
   }
 }

@@ -1,24 +1,30 @@
-.inputContainer{
-    flex-direction: row;
-    justify-content: center;
-
-    input[type=text]{
-        width: 20em;
-        margin-right: 10px;
-    }
-
-    button#addItemBtn{
-        margin-top: unset;
-    }
-}
-
-.radioInputContainer{
-    max-width: 70%;
-}
-
-.tasks{
-    .taskBar{
+main{
+    .inputContainer{
         flex-direction: row;
+        justify-content: center;
+    
+        input[type=text]{
+            width: 20em;
+            margin-right: 10px;
+        }
+    
+        button#addItemBtn{
+            margin-top: unset;
+        }
+    }
+    
+    .radioInputContainer{
+        max-width: 70%;
+    }
+
+    .tasks{
+        .taskBar{
+            flex-direction: row;
+        }
+    }
+
+    .toDoContainer ul li input[type=text]{
+        width: 50%;
     }
 }
 

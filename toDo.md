@@ -1,6 +1,6 @@
 Vad sidan bör innehålla - 
 ✓ Någon form av styling
-- Felmeddelande om man inte lägger till något i fältet
+✓ Felmeddelande om man inte lägger till något i fältet
 - Eventuellt två delar av listan (inte avklarat/avklarat), där första delen innehåller saker på listan som ska göras, på andra delen hamnar avklarade saker från listan
 - Sortering efter deadline, namn, datum då punkten lades till
 - Alla punkter ska ha en deadline
@@ -12,7 +12,6 @@ Vad listan bör innehålla -
 ✓ Du ska kunna ta bort saker från listan
 - Kunna ändra listan. Alltså redigera listans innehåll
 - Förtydling som visar om du klarat av/är klar med punkten på listan eller inte (Kan lösas med symbol/överstrykning)
-- Välja om punkten ska kryssas av eller inte genom att klicka på den
 
 För VG -
 - Placera avklarade punkter i den nedersta listan (Avklarat)
@@ -22,8 +21,6 @@ För VG -
 
 Kategorier jag tänkt mig: Ska prioriteras/viktigast, jobb, fritid, hushåll/hem.
 
-
-Lägger fokus på JavaScript/Typescript i första hand, skulle jag få tid över kan jag göra sidan finare.
 
 Lägg till ifall du hinner:
 Felmeddelande om rutan inte fylls i korrekt

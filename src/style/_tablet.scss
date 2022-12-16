@@ -1,8 +1,13 @@
 main{
     max-width: 80%;
     margin: 0 auto;
+
+    .radioInputContainer{
+        max-width: 65%;
+    }
+
+    .toDoContainer ul li input[type=text]{
+        width: 55%;
+    }
 }
 
-.radioInputContainer{
-    max-width: 65%;
-}

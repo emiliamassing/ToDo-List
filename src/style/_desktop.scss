@@ -1,21 +1,26 @@
 main{
     max-width: 70%;
     margin-top: 3rem;
-}
 
-.inputContainer{
-    max-width: 55%;
-    flex-direction: row;
-
-    input[type=text]{
-        width: 21em;
+    .inputContainer{
+        max-width: 55%;
+        flex-direction: row;
+    
+        input[type=text]{
+            width: 21em;
+        }
     }
-}
+    
+    .radioInputContainer{
+        max-width: 55%;
+        
+    }
 
-.radioInputContainer{
-    max-width: 55%;
-}
+    .toDoContainer{
+        max-width: 60%;
 
-.toDoContainer{
-    max-width: 60%;
+        ul li input[type=text]{
+            width: 55%;
+        }
+    }
 }

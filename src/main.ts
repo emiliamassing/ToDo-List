@@ -56,7 +56,6 @@ printTaskList();
 
 const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
 const newDeadline = <HTMLInputElement>document.querySelector('#date');
-// newTaskName.value.length === 0
 // Funktion för att lägga till ny todo
 function addNewTask(e: Event):void {
   e.preventDefault();
@@ -68,10 +67,12 @@ function addNewTask(e: Event):void {
 
   const index = toDoList.findIndex((task) => task.taskName === newTaskName.value);
   if (index === -1) {
-    // TODO: Fyll på med rätt data för kategori, deadline, dateAdded
     // pusha in som en "instans av din ToDoItem-klass" istället
     const dateAdded = new Date();
-    toDoList?.push(new ToDoItem(newTaskName.value, 'household', 'deadline', dateAdded, false));
+    const deadline = new Date(newDeadline.value);
+    const deadlineDate = deadline.toLocaleDateString();
+    toDoList?.push(new ToDoItem(newTaskName.value, 'household', deadlineDate, dateAdded, false));
+    // localStorage.setItem('todo', JSON.stringify(toDoList));
     printTaskList();
     console.log(dateAdded);
   } else {

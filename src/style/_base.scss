@@ -225,6 +225,20 @@ main{
                 padding: 7px;
                 margin-top: 5px;
                 cursor: pointer;
+
+                input[type=checkbox].checkCompleted{
+                    position: relative;
+                    top: 3px;
+                    height: 1.3rem;
+                    width: 1.3rem;
+                }
+
+                input[type=text]{
+                    width: 60%;
+                    appearance: none;
+                    border: none;
+                    background: none;
+                }
     
                 i{
                     margin-left: 5px;
@@ -233,14 +247,22 @@ main{
                 }
     
                 .fa-solid.fa-pen-to-square{
-                    top: 17px;
+                    top: 23px;
                     right: 30px;
                     margin-right: 7px;
                 }
     
                 .fa-solid.fa-x{
-                    top: 17px;
+                    top: 23px;
                     right: 10px;
+                }
+
+            }
+
+            li.editmode{
+
+                input[type=text]{
+                    display: none;
                 }
             }
         }

@@ -1,4 +1,11 @@
-type Categories = 'important' | 'work' | 'spareTime' | 'household'; // ta ev bort denna och byt till string
+interface Categories {
+
+  important: string;
+  work: string;
+  spareTime: string;
+  household: string;
+
+}
 
 class ToDoItem {
   taskName: string;

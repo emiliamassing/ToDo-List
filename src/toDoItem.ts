@@ -1,4 +1,4 @@
-interface Categories {
+interface ICategories {
 
   important: string;
   work: string;
@@ -10,7 +10,7 @@ interface Categories {
 class ToDoItem {
   taskName: string;
 
-  category: Categories;
+  category: ICategories;
 
   deadline: number;
 
@@ -18,7 +18,7 @@ class ToDoItem {
 
   isComplete: boolean;
 
-  constructor(taskName: string, category: Categories, deadline: number, addedDate: number, isComplete: boolean) {
+  constructor(taskName: string, category: ICategories, deadline: number, addedDate: number, isComplete: boolean) {
     this.taskName = taskName;
     this.category = category;
     this.deadline = deadline;

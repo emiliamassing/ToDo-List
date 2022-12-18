@@ -309,8 +309,8 @@ button#addItemBtn, button#darkModeBtn{
 
     &:hover{
         transition: 0.3s ease-in-out;
-        background-color: #d58de5db;
-        border: 2px solid #ec90ec;
+        background-color: var.$buttonBgHoverColor;
+        border: 2px solid var.$buttonBorderHoverColor;
     }
 }
 
@@ -347,7 +347,7 @@ button#darkModeBtn{
         margin-bottom: 10px;
 
         &:focus{
-            background-color: #f9f7f7;
+            background-color: var.$formFocusColor;
         }
     }
 
@@ -362,7 +362,7 @@ button#darkModeBtn{
             margin-bottom: 10px;
     
             &:focus{
-                background-color: #f9f7f7;
+                background-color: var.$formFocusColor;
             }
         }
 

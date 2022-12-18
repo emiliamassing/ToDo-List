@@ -27,9 +27,13 @@ function printTaskList(): void {
         <input type="text" value="${task.taskName}" id="editInput" readonly>
       </label>
       <span class"deadline">${task.deadline}</span>
-      <i></i>
-      <i class="editIcon fa-solid fa-pen-to-square fa-lg" tabindex="0"></i>
-      <i class="removeIcon fa-solid fa-x fa-lg" tabindex="0" data-id="${index}"></i>
+      <i></i> <!--Till kategori-->
+      <button class="editIcon" aria-label="Edit">
+        <i class="editIcon fa-solid fa-pen-to-square fa-lg"></i>
+      </button>
+      <button class="removeIcon" aria-label="Remove">
+        <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
+      </button>
     </li> `;
   });
 

@@ -95,7 +95,7 @@ function selectSorting() {
       toDoList.sort((a, b) => a.taskName > b.taskName); // Fixa denna
       printTaskList();
       break;
-    case 'newestDate':
+    case 'lastAdded':
       toDoList.sort((a, b) => b.addedDate - a.addedDate);
       printTaskList();
       break;
@@ -104,6 +104,27 @@ function selectSorting() {
       printTaskList();
       break;
   }
+
+  /* if ('deadline') {
+    toDoList.sort((a, b) => b.deadline - a.deadline); // Fixa denna
+    printTaskList();
+    return 1;
+  }
+  if ('alfabetic') {
+    toDoList.sort((a, b) => a.taskName > b.taskName); // Fixa denna
+    printTaskList();
+    return -1;
+  }
+  if ('newestDate') {
+    toDoList.sort((a, b) => b.addedDate - a.addedDate);
+    printTaskList();
+    return 1;
+  }
+  if ('oldestDate') {
+    toDoList.sort((a, b) => a.addedDate - b.addedDate);
+    printTaskList();
+    return 1;
+  } */
 }
 
 sortSelect.addEventListener('input', selectSorting);
@@ -111,4 +132,4 @@ sortSelect.addEventListener('input', selectSorting);
 // import { shuffle } from './utils';
 
 // I denna fil har vi lagrat vår "data", i detta exempel en ofullständig kortlek
-// import exampleCardDeck from './exampleArray';
+// import exampleCardDeck from './exampleArray'

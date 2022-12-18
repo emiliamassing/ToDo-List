@@ -22,7 +22,7 @@ function printTaskList(): void {
   toDoList.forEach((task, index) => {
     toDoListHtml += `
     <li>
-      <input type="checkbox" class="checkCompleted" tabindex="0">
+      <input type="checkbox" class="checkCompleted">
       <label>
         <input type="text" value="${task.taskName}" id="editInput" readonly>
       </label>
@@ -37,7 +37,6 @@ function printTaskList(): void {
 
   const tasks = Array.from(document.querySelectorAll('li i.removeIcon'));
   tasks.forEach((task) => {
-    console.log(tasks);
     task.addEventListener('click', removeTask); // eslint-disable-line
   });
 }
@@ -72,7 +71,7 @@ function addNewTask(e: Event):void {
     const deadline = new Date(newDeadline.value);
     const deadlineDate = deadline.toLocaleDateString();
     toDoList?.push(new ToDoItem(newTaskName.value, 'household', deadlineDate, dateAdded, false));
-    // localStorage.setItem('todo', JSON.stringify(toDoList));
+    localStorage.setItem('todo', JSON.stringify(toDoList));
     printTaskList();
     console.log(dateAdded);
   } else {
@@ -81,9 +80,33 @@ function addNewTask(e: Event):void {
   }
 }
 
-const addTaskBtn = document.querySelector('#addItemBtn');
+const addTaskBtn = <HTMLButtonElement>document.querySelector('#addItemBtn');
 addTaskBtn?.addEventListener('click', addNewTask);
 
+const sortSelect = <HTMLInputElement>document.querySelector('#sort');
+function selectSorting() {
+  // eslint-disable-next-line default-case
+  switch (sortSelect.value) {
+    case 'deadline':
+      toDoList.sort((a, b) => b.deadline - a.deadline); // Fixa denna
+      printTaskList();
+      break;
+    case 'alfabetic':
+      toDoList.sort((a, b) => a.taskName > b.taskName); // Fixa denna
+      printTaskList();
+      break;
+    case 'newestDate':
+      toDoList.sort((a, b) => b.addedDate - a.addedDate);
+      printTaskList();
+      break;
+    case 'oldestDate':
+      toDoList.sort((a, b) => a.addedDate - b.addedDate);
+      printTaskList();
+      break;
+  }
+}
+
+sortSelect.addEventListener('input', selectSorting);
 // I denna utils-fil har vi lagrat funktioner som ofta används, t.ex. en "blanda array"-funktion
 // import { shuffle } from './utils';
 

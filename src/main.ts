@@ -22,7 +22,7 @@ function printTaskList(): void {
   toDoList.forEach((task, index) => {
     toDoListHtml += `
     <li>
-      <input type="checkbox" class="checkCompleted">
+      <input type="checkbox" id="checkCompleted">
       <label>
         <input type="text" value="${task.taskName}" id="editInput" readonly>
       </label>
@@ -92,7 +92,7 @@ function selectSorting() {
   // eslint-disable-next-line default-case
   switch (sortSelect.value) {
     case 'deadline':
-      toDoList.sort((a, b) => b.deadline - a.deadline); // Fixa denna
+      toDoList.sort((a, b) => (new Date(a.deadline).getTime() - (new Date(b.deadline).getTime()))); // Fixa denna
       printTaskList();
       break;
     case 'alfabetic':
@@ -110,12 +110,12 @@ function selectSorting() {
   }
 
   /* if ('deadline') {
-    toDoList.sort((a, b) => b.deadline - a.deadline); // Fixa denna
+    toDoList.sort((a, b) => b.deadline - a.deadline);
     printTaskList();
     return 1;
   }
   if ('alfabetic') {
-    toDoList.sort((a, b) => a.taskName > b.taskName); // Fixa denna
+    toDoList.sort((a, b) => a.taskName > b.taskName);
     printTaskList();
     return -1;
   }

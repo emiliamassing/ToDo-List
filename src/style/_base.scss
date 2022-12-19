@@ -56,9 +56,10 @@ body{
                 }
 
                 button{
-                    background-color: var.$toDoWhiteColor;
+                    background-color: unset;
                     &:hover{
-                        background-color: var.$liHoverColor;
+                        border-bottom: 3px solid var.$blackTextColor;
+                        border-radius: 2px;
                     }
                 }
             }
@@ -117,10 +118,10 @@ body{
                 }
 
                 button{
-                    background-color: var.$toDoDmColor;
-
+                    background-color: unset;
                     &:hover{
-                        background-color: var.$dmLiHoverColor;
+                        border-bottom: 3px solid var.$dmWhiteColor;
+                        border-radius: 2px;
                     }
 
                     i{
@@ -250,7 +251,7 @@ main{
                 margin-top: 5px;
                 cursor: pointer;
 
-                input[type=checkbox].checkCompleted{
+                input[type=checkbox]#checkCompleted{
                     position: relative;
                     top: 3px;
                     height: 1.3rem;
@@ -294,6 +295,13 @@ main{
 
                 input[type=text]{
                     display: none;
+                }
+            }
+
+            li.completed{
+
+                input[type=text]{
+                    text-decoration: line-through;
                 }
             }
         }

@@ -59,13 +59,53 @@ printTaskList();
 
 const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
 const newDeadline = <HTMLInputElement>document.querySelector('#date');
+
+function setErrorFor(input:HTMLInputElement, message:string) {
+  const formControl = <HTMLElement>document.querySelector('.formControl');
+  const small = <HTMLElement>document.querySelector('small');
+  const icon = <HTMLElement>document.querySelector('.errorIcon');
+
+  icon?.classList.remove('toggleHidden');
+  small?.classList.remove('toggleHidden');
+
+  small.innerText = message;
+  formControl?.classList.add('error');
+}
+
+function setSuccessFor(input:HTMLElement) {
+  const formControl = <HTMLElement>document.querySelector('.formControl');
+  const small = <HTMLElement>document.querySelector('small');
+  const icon = <HTMLElement>document.querySelector('.errorIcon');
+
+  icon.classList.add('toggleHidden');
+  small.classList.add('toggleHidden');
+  formControl.classList.remove('error');
+}
+
+/* if (newTaskName.value.length === 0 || newDeadline.value.length === 0) {
+    // eslint-disable-next-line no-alert
+    // alert('You need to write something and pick a date');
+    setErrorFor(newTaskName, 'You need to write something');
+    setErrorFor(newDeadline, 'Your need to pick a deadline');
+    return;
+  } */
+
 // Funktion för att lägga till ny todo
+// Fixa problemet med att det blir felmeddelanden på rätt input
 function addNewTask(e: Event):void {
   e.preventDefault();
-  if (newTaskName.value.length === 0 || newDeadline.value.length === 0) {
+  if (newTaskName.value.length === 0) {
     // eslint-disable-next-line no-alert
-    alert('You need to write something and pick a date');
-    return;
+    setErrorFor(newTaskName, 'You need to write something');
+  } else {
+    setSuccessFor(newTaskName);
+  }
+
+  if (newDeadline.value.length === 0) { 
+    // eslint-disable-next-line no-alert
+    setErrorFor(newDeadline, 'Your need to pick a deadline');
+  } else {
+    setSuccessFor(newDeadline);
   }
 
   const index = toDoList.findIndex((task) => task.taskName === newTaskName.value);
@@ -80,7 +120,8 @@ function addNewTask(e: Event):void {
     console.log(dateAdded);
   } else {
     // eslint-disable-next-line no-alert
-    alert("You've already added this task");
+    // alert("You've already added this task");
+    setErrorFor(newTaskName, "You've already added this task");
   }
 }
 
@@ -96,7 +137,7 @@ function selectSorting() {
       printTaskList();
       break;
     case 'alfabetic':
-      toDoList.sort((a, b) => {
+      toDoList.sort((a, b) => { // Fixa felmeddelande
         const textA = a.taskName.toLowerCase();
         const textB = b.taskName.toLowerCase();
         if (textA < textB) {

@@ -92,11 +92,20 @@ function selectSorting() {
   // eslint-disable-next-line default-case
   switch (sortSelect.value) {
     case 'deadline':
-      toDoList.sort((a, b) => (new Date(a.deadline).getTime() - (new Date(b.deadline).getTime()))); // Fixa denna
+      toDoList.sort((a, b) => (new Date(a.deadline).getTime() - (new Date(b.deadline).getTime())));
       printTaskList();
       break;
     case 'alfabetic':
-      toDoList.sort((a, b) => a.taskName > b.taskName); // Fixa denna
+      toDoList.sort((a, b) => {
+        const textA = a.taskName.toLowerCase();
+        const textB = b.taskName.toLowerCase();
+        if (textA < textB) {
+          return -1;
+        }
+        if (textA > textB) {
+          return 0;
+        }
+      });
       printTaskList();
       break;
     case 'lastAdded':
@@ -108,27 +117,6 @@ function selectSorting() {
       printTaskList();
       break;
   }
-
-  /* if ('deadline') {
-    toDoList.sort((a, b) => b.deadline - a.deadline);
-    printTaskList();
-    return 1;
-  }
-  if ('alfabetic') {
-    toDoList.sort((a, b) => a.taskName > b.taskName);
-    printTaskList();
-    return -1;
-  }
-  if ('newestDate') {
-    toDoList.sort((a, b) => b.addedDate - a.addedDate);
-    printTaskList();
-    return 1;
-  }
-  if ('oldestDate') {
-    toDoList.sort((a, b) => a.addedDate - b.addedDate);
-    printTaskList();
-    return 1;
-  } */
 }
 
 sortSelect.addEventListener('input', selectSorting);

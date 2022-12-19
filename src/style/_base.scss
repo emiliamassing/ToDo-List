@@ -335,7 +335,7 @@ button#darkModeBtn{
     justify-content: center;
 
     span.text{
-        margin-top: 1.3rem;
+        margin-top: 2rem;
         margin-bottom: 0.8rem;
     }
 }
@@ -388,12 +388,17 @@ button#darkModeBtn{
        }
     }
 
-    .formControl.error input, .formControl.error small{
+    .formControl.error small{
         color: var.$errorColor;
     }
 
     .formControl.error i.fa-circle-xmark{
         visibility: visible;
+        color: var.$errorColor;
+    }
+
+    .formControl.error input{
+        border: 2px solid var.$errorColor;
     }
 
 }

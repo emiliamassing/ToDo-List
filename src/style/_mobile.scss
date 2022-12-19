@@ -26,5 +26,9 @@ main{
     .toDoContainer ul li input[type=text]{
         width: 40%;
     }
+
+    .formControl.error i{
+        right: 15px;
+    }
 }
 

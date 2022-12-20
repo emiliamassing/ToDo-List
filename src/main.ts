@@ -101,9 +101,9 @@ function addNewTask(e: Event):void {
     setSuccessFor(newTaskName);
   }
 
-  if (newDeadline.value.length === 0) { 
+  if (newDeadline.value.length === 0) {
     // eslint-disable-next-line no-alert
-    setErrorFor(newDeadline, 'Your need to pick a deadline');
+    setErrorFor(newDeadline, 'You need to pick a deadline');
   } else {
     setSuccessFor(newDeadline);
   }
@@ -115,7 +115,7 @@ function addNewTask(e: Event):void {
     const deadline = new Date(newDeadline.value);
     const deadlineDate = deadline.toLocaleDateString();
     toDoList?.push(new ToDoItem(newTaskName.value, 'household', deadlineDate, dateAdded, false));
-    localStorage.setItem('todo', JSON.stringify(toDoList));
+    // localStorage.setItem('todo', JSON.stringify(toDoList));
     printTaskList();
     console.log(dateAdded);
   } else {

@@ -2,7 +2,7 @@ Vad sidan bör innehålla -
 ✓ Någon form av styling
 ✓ Felmeddelande om man inte lägger till något i fältet
 - Eventuellt två delar av listan (inte avklarat/avklarat), där första delen innehåller saker på listan som ska göras, på andra delen hamnar avklarade saker från listan
-- Sortering efter deadline, namn, datum då punkten lades till
+✓ Sortering efter deadline, namn, datum då punkten lades till
 ✓ Alla punkter ska ha en deadline
 - När deadline närmar sig ska detta förtydligas med text/färg etc
 
@@ -18,9 +18,9 @@ För G -
 ✓ Det ska gå att ta bort uppgifter
 ✓ish Det ska gå att markera uppgifter som klara
 ✓ Uppgifter ska ha deadlines (datum)
-Uppgifter ska gå att sortera på deadline
-Uppgifter ska gå att sortera på namn
-Uppgifter ska gå att sortera på datum när de lades till
+✓ Uppgifter ska gå att sortera på deadline
+✓ Uppgifter ska gå att sortera på namn
+✓ Uppgifter ska gå att sortera på datum när de lades till
 
 För VG -
 - Placera avklarade punkter i den nedersta listan (Avklarat)

@@ -22,9 +22,9 @@ function printTaskList(): void {
   toDoList.forEach((task, index) => {
     toDoListHtml += `
     <li>
-      <input type="checkbox" id="toDoCheckbox">
+      <input type="checkbox" id="toDoCheckbox" class="toDoCheckbox">
       <label>
-        <input type="text" value="${task.taskName}" id="editInput" readonly>
+        <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
       </label>
       <span class"deadline">${task.deadline}</span>
       <i></i> <!--Till kategori-->
@@ -43,6 +43,18 @@ function printTaskList(): void {
   tasks.forEach((task) => {
     task.addEventListener('click', removeTask); // eslint-disable-line
   });
+
+  const checkbox = Array.from(document.querySelectorAll('.toDoCheckbox'));
+  checkbox.forEach((task) => {
+    task.addEventListener('change', completeTask); // eslint-disable-line
+  });
+}
+
+// Funktion för att markera todo som klar
+function completeTask(e: Event) {
+  console.log('checked');
+  const liComplete = document.querySelector('li');
+  liComplete?.classList.toggle('completed');
 }
 
 // Funktion för att ta bort todo
@@ -72,7 +84,7 @@ function setErrorFor(input:HTMLInputElement, message:string) {
   formControl?.classList.add('error');
 }
 
-function setSuccessFor(input:HTMLElement) {
+function setSuccessFor(input:HTMLInputElement) {
   const formControl = <HTMLElement>document.querySelector('.formControl');
   const small = <HTMLElement>document.querySelector('small');
   const icon = <HTMLElement>document.querySelector('.errorIcon');
@@ -108,7 +120,6 @@ function addNewTask(e: Event):void {
     printTaskList();
     setSuccessFor(newTaskName);
     setSuccessFor(newDeadline);
-    console.log(dateAdded);
   } else {
     setErrorFor(newTaskName, "You've already added this task");
   }

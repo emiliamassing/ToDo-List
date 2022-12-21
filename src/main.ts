@@ -22,7 +22,7 @@ function printTaskList(): void {
   toDoList.forEach((task, index) => {
     toDoListHtml += `
     <li>
-      <input type="checkbox" id="checkCompleted">
+      <input type="checkbox" id="toDoCheckbox">
       <label>
         <input type="text" value="${task.taskName}" id="editInput" readonly>
       </label>
@@ -82,30 +82,19 @@ function setSuccessFor(input:HTMLElement) {
   formControl.classList.remove('error');
 }
 
-/* if (newTaskName.value.length === 0 || newDeadline.value.length === 0) {
-    // eslint-disable-next-line no-alert
-    // alert('You need to write something and pick a date');
-    setErrorFor(newTaskName, 'You need to write something');
-    setErrorFor(newDeadline, 'Your need to pick a deadline');
-    return;
-  } */
-
 // Funktion för att lägga till ny todo
 // Fixa problemet med att det blir felmeddelanden på rätt input
 function addNewTask(e: Event):void {
   e.preventDefault();
+
   if (newTaskName.value.length === 0) {
-    // eslint-disable-next-line no-alert
     setErrorFor(newTaskName, 'You need to write something');
-  } else {
-    setSuccessFor(newTaskName);
+    return;
   }
 
   if (newDeadline.value.length === 0) {
-    // eslint-disable-next-line no-alert
     setErrorFor(newDeadline, 'You need to pick a deadline');
-  } else {
-    setSuccessFor(newDeadline);
+    return;
   }
 
   const index = toDoList.findIndex((task) => task.taskName === newTaskName.value);
@@ -117,10 +106,10 @@ function addNewTask(e: Event):void {
     toDoList?.push(new ToDoItem(newTaskName.value, 'household', deadlineDate, dateAdded, false));
     // localStorage.setItem('todo', JSON.stringify(toDoList));
     printTaskList();
+    setSuccessFor(newTaskName);
+    setSuccessFor(newDeadline);
     console.log(dateAdded);
   } else {
-    // eslint-disable-next-line no-alert
-    // alert("You've already added this task");
     setErrorFor(newTaskName, "You've already added this task");
   }
 }
@@ -129,6 +118,8 @@ const addTaskBtn = <HTMLButtonElement>document.querySelector('#addItemBtn');
 addTaskBtn?.addEventListener('click', addNewTask);
 
 const sortSelect = <HTMLInputElement>document.querySelector('#sort');
+
+// Sortering
 function selectSorting() {
   // eslint-disable-next-line default-case
   switch (sortSelect.value) {
@@ -161,6 +152,7 @@ function selectSorting() {
 }
 
 sortSelect.addEventListener('input', selectSorting);
+
 // I denna utils-fil har vi lagrat funktioner som ofta används, t.ex. en "blanda array"-funktion
 // import { shuffle } from './utils';
 

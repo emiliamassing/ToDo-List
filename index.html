@@ -22,11 +22,11 @@
         <div class="btnContainer">
           <span>New ToDo</span>
         </div>
-        <form>
+        <form id="addNewTodo">
           <div class="inputContainer">
             <div class="formControl">
               <label>
-                <input type="text" name="writeItem" id="writeItem" placeholder="Add new task">
+                <input type="text" name="writeItem" id="writeItem" placeholder="Add new task" required>
                 <i class="errorIcon fa-regular fa-circle-xmark fa-lg"></i>
                 <small class="toggleHidden">Error Message</small>
               </label>
@@ -59,7 +59,7 @@
           <div class="inputContainer">
             <div class="formControl">
               <label>
-                <input type="date" name="date" id="date">
+                <input type="date" name="date" id="date" required>
                 <small class="toggleHidden">Error Message</small>
               </label>
             </div>

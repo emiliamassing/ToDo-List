@@ -22,9 +22,9 @@ function printTaskList(): void {
   toDoList.forEach((task, index) => {
     toDoListHtml += `
     <li>
-      <input type="checkbox" id="toDoCheckbox" class="toDoCheckbox">
+      <input type="checkbox" id="toDoCheckbox" class="toDoCheckbox" data-id="${index}">
       <label>
-        <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
+      <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
       </label>
       <span class"deadline">${task.deadline}</span>
       <i></i> <!--Till kategori-->
@@ -51,10 +51,12 @@ function printTaskList(): void {
 }
 
 // Funktion för att markera todo som klar
+// Använd dig av index för att kryssa av rätt checkbox
 function completeTask(e: Event) {
-  console.log('checked');
-  const liComplete = document.querySelector('li');
-  liComplete?.classList.toggle('completed');
+  const checkboxTarget = e.target as HTMLInputElement;
+  const checkBoxIndex = Number(checkboxTarget.dataset.id);
+  console.log(checkBoxIndex);
+  checkboxTarget?.parentElement?.classList.toggle('completed');
 }
 
 // Funktion för att ta bort todo

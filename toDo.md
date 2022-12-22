@@ -11,12 +11,12 @@ Vad listan bör innehålla -
 ✓ Du ska kunna lägga till saker på listan
 ✓ Du ska kunna ta bort saker från listan
 - Kunna ändra listan. Alltså redigera listans innehåll
-- Förtydling som visar om du klarat av/är klar med punkten på listan eller inte (Kan lösas med symbol/överstrykning)
+✓ Förtydling som visar om du klarat av/är klar med punkten på listan eller inte (Kan lösas med symbol/överstrykning)
 
 För G -
 ✓ Det ska gå att lägga till uppgifter
 ✓ Det ska gå att ta bort uppgifter
-✓ish Det ska gå att markera uppgifter som klara
+✓ Det ska gå att markera uppgifter som klara
 ✓ Uppgifter ska ha deadlines (datum)
 ✓ Uppgifter ska gå att sortera på deadline
 ✓ Uppgifter ska gå att sortera på namn

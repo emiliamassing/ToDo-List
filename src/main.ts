@@ -51,7 +51,6 @@ function printTaskList(): void {
 }
 
 // Funktion för att markera todo som klar
-// Använd dig av index för att kryssa av rätt checkbox
 function completeTask(e: Event) {
   const checkboxTarget = e.target as HTMLInputElement;
   const checkBoxIndex = Number(checkboxTarget.dataset.id);

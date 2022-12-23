@@ -13,31 +13,49 @@ const darkModeBtn = document.querySelector('#darkModeBtn');
 darkModeBtn?.addEventListener('click', toggleDarkMode);
 
 const incompleteTasks: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
+const completedTasks: HTMLElement = document.querySelector('#completedTasks') as HTMLElement;
 
 // Funktion för att skriva ut en ny todo
 function printTaskList(): void {
   incompleteTasks.innerHTML = '';
+  completedTasks.innerHTML = '';
   let toDoListHtml = '';
+  let toDoCompletedHtml = '';
 
   toDoList.forEach((task, index) => {
+    if (task.isComplete) {
+      toDoCompletedHtml += `
+      <li>
+        <label>
+          <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
+        </label>
+        <span class"deadline">${task.deadline}</span>
+        <i></i> <!--Till kategori-->
+        <button class="removeIcon" aria-label="Remove">
+        <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
+        </button>
+      </li> `;
+      return;
+    }
     toDoListHtml += `
     <li>
-      <input type="checkbox" id="toDoCheckbox" class="toDoCheckbox" data-id="${index}">
-      <label>
-      <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
-      </label>
-      <span class"deadline">${task.deadline}</span>
-      <i></i> <!--Till kategori-->
-      <button class="editIcon" aria-label="Edit">
+        <input type="checkbox" id="toDoCheckbox" class="toDoCheckbox" data-id="${index}">
+        <label>
+          <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
+        </label>
+        <span class"deadline">${task.deadline}</span>
+        <i></i> <!--Till kategori-->
+        <button class="editIcon" aria-label="Edit">
         <i class="editIcon fa-solid fa-pen-to-square fa-lg"></i>
-      </button>
-      <button class="removeIcon" aria-label="Remove">
-        <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
-      </button>
+        </button>
+        <button class="removeIcon" aria-label="Remove">
+          <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
+        </button>
     </li> `;
   });
 
   incompleteTasks.innerHTML = toDoListHtml;
+  completedTasks.innerHTML = toDoCompletedHtml;
 
   const tasks = Array.from(document.querySelectorAll('li i.removeIcon'));
   tasks.forEach((task) => {
@@ -54,8 +72,13 @@ function printTaskList(): void {
 function completeTask(e: Event) {
   const checkboxTarget = e.target as HTMLInputElement;
   const checkBoxIndex = Number(checkboxTarget.dataset.id);
-  console.log(checkBoxIndex);
+
+  const todo = toDoList[checkBoxIndex];
+  todo.isComplete = true;
   checkboxTarget?.parentElement?.classList.toggle('completed');
+  const completedTasks = toDoList.filter((tasks) => tasks.isComplete === true);
+  console.log(completedTasks);
+  printTaskList();
 }
 
 // Funktion för att ta bort todo
@@ -97,6 +120,7 @@ function setSuccessFor(input:HTMLInputElement) {
 
 // Funktion för att lägga till ny todo
 // Fixa problemet med att det blir felmeddelanden på rätt input
+
 function addNewTask(e: Event):void {
   e.preventDefault();
 

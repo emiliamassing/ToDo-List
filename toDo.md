@@ -23,7 +23,7 @@ För G -
 ✓ Uppgifter ska gå att sortera på datum när de lades till
 
 För VG -
-- Placera avklarade punkter i den nedersta listan (Avklarat)
+✓ Placera avklarade punkter i den nedersta listan (Avklarat)
 - Förtydliga vilka uppgifter som passerat deadline med ex färg
 - Uppgifter som förfaller inom 5 dagar ska också förtydligas
 - Det ska gå att kategorisera uppgifter med hjälp av symboler. Minst 3 kategorier.
@@ -82,3 +82,22 @@ KOD JAG INTE ANVÄNDER - Ta bort när du vet helt säkert att den nya koden fung
     taskNode.appendChild(removeIcon);
     incompleteTasks?.appendChild(taskNode); 
   } */
+
+ <li>
+      <div class="row">
+        <input type="checkbox" id="toDoCheckbox" class="toDoCheckbox" data-id="${index}">
+        <label>
+          <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
+        </label>
+      </div>
+      <div class="row">
+        <span class"deadline">${task.deadline}</span>
+        <i></i> <!--Till kategori-->
+        <button class="editIcon" aria-label="Edit">
+        <i class="editIcon fa-solid fa-pen-to-square fa-lg"></i>
+        </button>
+        <button class="removeIcon" aria-label="Remove">
+          <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
+        </button>
+      </div>
+    </li> `;

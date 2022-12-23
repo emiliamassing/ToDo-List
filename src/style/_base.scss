@@ -260,7 +260,7 @@ main{
                 }
 
                 input[type=text]{
-                    width: 30%;
+                    width: 80%;
                     appearance: none;
                     border: none;
                     background: none;
@@ -284,12 +284,17 @@ main{
                 }
 
                 .fa-solid.fa-pen-to-square, .fa-solid.fa-x{
+                    top: 10px;
                     left: 4px;
                 }
     
                 .fa-solid.fa-x, button.removeIcon{
                     right: 5px;
                 }
+            }
+
+            span{
+                margin-left: 3px;
             }
 
             li.editmode{

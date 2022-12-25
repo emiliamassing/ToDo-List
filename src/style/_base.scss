@@ -297,6 +297,10 @@ main{
                 margin-left: 3px;
             }
 
+            span.overdue{
+                color: var.$errorColor;
+            }
+
             li.editmode{
 
                 input[type=text]{

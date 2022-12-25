@@ -14,6 +14,19 @@ darkModeBtn?.addEventListener('click', toggleDarkMode);
 
 const incompleteTasksUl: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
 const completedTasksUl: HTMLElement = document.querySelector('#completedTasks') as HTMLElement;
+const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
+const newDeadline = <HTMLInputElement>document.querySelector('#date');
+
+// Funktion för att se om deadline passerat
+/* function checkDueDate(): void {
+  const todaysDate = new Date();
+  const deadline = new Date(newDeadline.value);
+  const span = <HTMLElement>document.querySelector('.deadline');
+  if (deadline < todaysDate) {
+    span?.classList.add('overdue');
+    console.log('rödmarkera');
+  }
+} */
 
 // Funktion för att skriva ut en ny todo
 function printTaskList(): void {
@@ -29,7 +42,7 @@ function printTaskList(): void {
         <label>
           <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
         </label>
-        <span class"deadline">${task.deadline}</span>
+        <span class="deadline">${task.deadline}</span>
         <i></i> <!--Till kategori-->
         <button class="removeIcon" aria-label="Remove">
         <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
@@ -56,6 +69,15 @@ function printTaskList(): void {
 
   incompleteTasksUl.innerHTML = toDoListHtml;
   completedTasksUl.innerHTML = toDoCompletedHtml;
+
+  const todaysDate = new Date();
+  const deadline = new Date(newDeadline.value);
+  const span = <HTMLElement>document.querySelector('.deadline');
+
+  if (deadline < todaysDate) {
+    span?.classList.add('overdue');
+    console.log('rödmarkera');
+  }
 
   const tasks = Array.from(document.querySelectorAll('li i.removeIcon'));
   tasks.forEach((task) => {
@@ -93,9 +115,7 @@ function removeTask(e: Event) {
 }
 printTaskList();
 
-const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
-const newDeadline = <HTMLInputElement>document.querySelector('#date');
-
+// Funktion för felmeddelanden
 function setErrorFor(input:HTMLInputElement, message:string) {
   const formControl = <HTMLElement>document.querySelector('.formControl');
   const small = <HTMLElement>document.querySelector('small');
@@ -108,6 +128,7 @@ function setErrorFor(input:HTMLInputElement, message:string) {
   formControl?.classList.add('error');
 }
 
+// Funktion som tar bort felmeddelanden
 function setSuccessFor(input:HTMLInputElement) {
   const formControl = <HTMLElement>document.querySelector('.formControl');
   const small = <HTMLElement>document.querySelector('small');
@@ -116,16 +137,6 @@ function setSuccessFor(input:HTMLInputElement) {
   icon.classList.add('toggleHidden');
   small.classList.add('toggleHidden');
   formControl.classList.remove('error');
-}
-
-function checkDueDate(): void {
-  const todaysDate = new Date();
-  const deadline = new Date(newDeadline.value);
-  const span = <HTMLElement>document.querySelector('.deadline');
-  if (todaysDate > deadline) {
-    span?.classList.add('overdue');
-    console.log('rödmarkera');
-  }
 }
 
 // Funktion för att lägga till ny todo
@@ -153,7 +164,6 @@ function addNewTask(e: Event):void {
     printTaskList();
     setSuccessFor(newTaskName);
     setSuccessFor(newDeadline);
-    checkDueDate();
   } else {
     setErrorFor(newTaskName, "You've already added this task");
   }

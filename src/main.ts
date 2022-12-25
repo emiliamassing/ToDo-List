@@ -12,13 +12,13 @@ function toggleDarkMode(): void {
 const darkModeBtn = document.querySelector('#darkModeBtn');
 darkModeBtn?.addEventListener('click', toggleDarkMode);
 
-const incompleteTasks: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
-const completedTasks: HTMLElement = document.querySelector('#completedTasks') as HTMLElement;
+const incompleteTasksUl: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
+const completedTasksUl: HTMLElement = document.querySelector('#completedTasks') as HTMLElement;
 
 // Funktion för att skriva ut en ny todo
 function printTaskList(): void {
-  incompleteTasks.innerHTML = '';
-  completedTasks.innerHTML = '';
+  incompleteTasksUl.innerHTML = '';
+  completedTasksUl.innerHTML = '';
   let toDoListHtml = '';
   let toDoCompletedHtml = '';
 
@@ -43,7 +43,7 @@ function printTaskList(): void {
         <label>
           <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
         </label>
-        <span class"deadline">${task.deadline}</span>
+        <span class="deadline">${task.deadline}</span>
         <i></i> <!--Till kategori-->
         <button class="editIcon" aria-label="Edit">
         <i class="editIcon fa-solid fa-pen-to-square fa-lg"></i>
@@ -54,8 +54,8 @@ function printTaskList(): void {
     </li> `;
   });
 
-  incompleteTasks.innerHTML = toDoListHtml;
-  completedTasks.innerHTML = toDoCompletedHtml;
+  incompleteTasksUl.innerHTML = toDoListHtml;
+  completedTasksUl.innerHTML = toDoCompletedHtml;
 
   const tasks = Array.from(document.querySelectorAll('li i.removeIcon'));
   tasks.forEach((task) => {
@@ -118,9 +118,18 @@ function setSuccessFor(input:HTMLInputElement) {
   formControl.classList.remove('error');
 }
 
+function checkDueDate(): void {
+  const todaysDate = new Date();
+  const deadline = new Date(newDeadline.value);
+  const span = <HTMLElement>document.querySelector('.deadline');
+  if (todaysDate > deadline) {
+    span?.classList.add('overdue');
+    console.log('rödmarkera');
+  }
+}
+
 // Funktion för att lägga till ny todo
 // Fixa problemet med att det blir felmeddelanden på rätt input
-
 function addNewTask(e: Event):void {
   e.preventDefault();
 
@@ -136,7 +145,6 @@ function addNewTask(e: Event):void {
 
   const index = toDoList.findIndex((task) => task.taskName === newTaskName.value);
   if (index === -1) {
-    // pusha in som en "instans av din ToDoItem-klass" istället
     const dateAdded = new Date();
     const deadline = new Date(newDeadline.value);
     const deadlineDate = deadline.toLocaleDateString();
@@ -145,6 +153,7 @@ function addNewTask(e: Event):void {
     printTaskList();
     setSuccessFor(newTaskName);
     setSuccessFor(newDeadline);
+    checkDueDate();
   } else {
     setErrorFor(newTaskName, "You've already added this task");
   }

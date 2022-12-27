@@ -84,10 +84,10 @@ function printTaskList(): void {
     task.addEventListener('click', removeTask); // eslint-disable-line
   });
 
-  const editIcons = Array.from(document.querySelectorAll('li i.editIcon'));
+  /* const editIcons = Array.from(document.querySelectorAll('li i.editIcon'));
   editIcons.forEach((task) => {
     task.addEventListener('click', editTask); // eslint-disable-line
-  });
+  }); */
 
   const checkbox = Array.from(document.querySelectorAll('.toDoCheckbox'));
   checkbox.forEach((task) => {
@@ -119,7 +119,7 @@ function removeTask(e: Event) {
 
 // Funktion för att redigera todo
 // Lägg till kod för att uppdatera input.value
-function editTask(e: Event) {
+/* function editTask(e: Event) {
   const editTarget = e.target as HTMLInputElement;
   const editIndex = Number(editTarget.dataset.id);
 
@@ -129,7 +129,7 @@ function editTask(e: Event) {
   input.addEventListener('blur', e => {
     input.setAttribute('readonly', true);
   });
-}
+} */
 
 printTaskList();
 

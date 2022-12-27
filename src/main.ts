@@ -120,10 +120,15 @@ function removeTask(e: Event) {
 }
 
 // Funktion för att redigera todo
-function editTask() {
+// Lägg till kod för att uppdatera input.value
+function editTask(e: Event) {
   const input = <HTMLInputElement>document.querySelector('.editInput');
   input?.removeAttribute('readonly');
   input.focus();
+  input.addEventListener('blur', e => {
+    input.setAttribute('readonly', true);
+    console.log(input.value);
+  });
 }
 
 printTaskList();

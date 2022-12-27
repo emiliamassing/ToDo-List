@@ -1,7 +1,7 @@
 Vad sidan bör innehålla - 
 ✓ Någon form av styling
 ✓ Felmeddelande om man inte lägger till något i fältet
-- Eventuellt två delar av listan (inte avklarat/avklarat), där första delen innehåller saker på listan som ska göras, på andra delen hamnar avklarade saker från listan
+✓  Eventuellt två delar av listan (inte avklarat/avklarat), där första delen innehåller saker på listan som ska göras, på andra delen hamnar avklarade saker från listan
 ✓ Sortering efter deadline, namn, datum då punkten lades till
 ✓ Alla punkter ska ha en deadline
 - När deadline närmar sig ska detta förtydligas med text/färg etc
@@ -10,7 +10,7 @@ Vad sidan bör innehålla -
 Vad listan bör innehålla -
 ✓ Du ska kunna lägga till saker på listan
 ✓ Du ska kunna ta bort saker från listan
-- Kunna ändra listan. Alltså redigera listans innehåll
+- Kunna ändra listan. Alltså redigera listans innehåll (Hinner ej med denna)
 ✓ Förtydling som visar om du klarat av/är klar med punkten på listan eller inte (Kan lösas med symbol/överstrykning)
 
 För G -
@@ -29,11 +29,3 @@ För VG -
 - Det ska gå att kategorisera uppgifter med hjälp av symboler. Minst 3 kategorier.
 
 Kategorier jag tänkt mig: Ska prioriteras/viktigast, jobb, fritid, hushåll/hem.
-
-
-Lägg till ifall du hinner:
-Felmeddelande om rutan inte fylls i korrekt
-notis om att punkten lades till - (typ task added)
-
-
-KOD JAG INTE ANVÄNDER - Ta bort när du vet helt säkert att den nya koden fungerar.

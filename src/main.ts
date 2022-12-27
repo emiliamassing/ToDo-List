@@ -3,19 +3,21 @@ import ToDoItem from './toDoItem';
 
 const toDoList: ToDoItem[] = [];
 
+const darkModeBtn = document.querySelector('#darkModeBtn');
+const incompleteTasksUl: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
+const completedTasksUl: HTMLElement = document.querySelector('#completedTasks') as HTMLElement;
+const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
+const newDeadline = <HTMLInputElement>document.querySelector('#date');
+const addTaskBtn = <HTMLButtonElement>document.querySelector('#addItemBtn');
+const sortSelect = <HTMLInputElement>document.querySelector('#sort');
+
 // Funktion för dark mode
 function toggleDarkMode(): void {
   const bodyElement = document.body;
   bodyElement.classList.toggle('darkMode');
 }
 
-const darkModeBtn = document.querySelector('#darkModeBtn');
 darkModeBtn?.addEventListener('click', toggleDarkMode);
-
-const incompleteTasksUl: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
-const completedTasksUl: HTMLElement = document.querySelector('#completedTasks') as HTMLElement;
-const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
-const newDeadline = <HTMLInputElement>document.querySelector('#date');
 
 // Funktion för att se om deadline passerat
 /* function checkDueDate(): void {
@@ -39,9 +41,7 @@ function printTaskList(): void {
     if (task.isComplete) {
       toDoCompletedHtml += `
       <li>
-        <label>
-          <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
-        </label>
+        <span>${task.taskName}</span>
         <span class="deadline">${task.deadline}</span>
         <i></i> <!--Till kategori-->
         <button class="removeIcon" aria-label="Remove">
@@ -162,10 +162,7 @@ function addNewTask(e: Event):void {
   }
 }
 
-const addTaskBtn = <HTMLButtonElement>document.querySelector('#addItemBtn');
 addTaskBtn?.addEventListener('click', addNewTask);
-
-const sortSelect = <HTMLInputElement>document.querySelector('#sort');
 
 // Sortering
 function selectSorting() {
@@ -200,9 +197,3 @@ function selectSorting() {
 }
 
 sortSelect.addEventListener('input', selectSorting);
-
-// I denna utils-fil har vi lagrat funktioner som ofta används, t.ex. en "blanda array"-funktion
-// import { shuffle } from './utils';
-
-// I denna fil har vi lagrat vår "data", i detta exempel en ofullständig kortlek
-// import exampleCardDeck from './exampleArray'

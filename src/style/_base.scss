@@ -109,10 +109,6 @@ body{
     
             li{
 
-                input[type=text]{
-                    color: var.$dmWhiteColor;
-                }
-
                 &:hover{
                     background-color: var.$dmLiHoverColor;
                 }

@@ -17,5 +17,14 @@ main{
 
     .toDoContainer{
         max-width: 60%;
+        
+        ul{
+            li{
+
+                span.deadline{
+                    margin-left: 10vw;
+                }
+            }
+        }  
     }
 }

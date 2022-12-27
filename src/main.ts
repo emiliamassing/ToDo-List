@@ -99,7 +99,7 @@ function completeTask(e: Event) {
   const todo = toDoList[checkBoxIndex];
   todo.isComplete = true;
   checkboxTarget?.parentElement?.classList.toggle('completed');
-  const completedTasks = toDoList.filter((tasks) => tasks.isComplete === true);
+  toDoList.filter((tasks) => tasks.isComplete === true);
   printTaskList();
 }
 

@@ -4,12 +4,20 @@ import ToDoItem from './toDoItem';
 const toDoList: ToDoItem[] = [];
 
 const darkModeBtn = document.querySelector('#darkModeBtn');
+
 const incompleteTasksUl: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
 const completedTasksUl: HTMLElement = document.querySelector('#completedTasks') as HTMLElement;
+
 const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
 const newDeadline = <HTMLInputElement>document.querySelector('#date');
+
 const addTaskBtn = <HTMLButtonElement>document.querySelector('#addItemBtn');
 const sortSelect = <HTMLInputElement>document.querySelector('#sort');
+
+const categoryImportant = <HTMLInputElement>document.querySelector('#important');
+const categoryWork = <HTMLInputElement>document.querySelector('#work');
+const categoryspareTime = <HTMLInputElement>document.querySelector('#spareTime');
+const categoryHouseHold = <HTMLInputElement>document.querySelector('#household');
 
 // Funktion för dark mode
 function toggleDarkMode(): void {
@@ -43,7 +51,6 @@ function printTaskList(): void {
       <li>
         <span>${task.taskName}</span>
         <span class="deadline">${task.deadline}</span>
-        <i></i> <!--Till kategori-->
         <button class="removeIcon" aria-label="Remove">
         <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
         </button>
@@ -65,7 +72,7 @@ function printTaskList(): void {
   completedTasksUl.innerHTML = toDoCompletedHtml;
 
   const todaysDate = new Date();
-  const deadline = new Date(newDeadline.value);
+  const deadline = new Date(newDeadline.value); // Hämta deadline från toDoList istället.
   const span = <HTMLElement>document.querySelector('.deadline');
 
   if (deadline < todaysDate) {
@@ -145,6 +152,10 @@ function addNewTask(e: Event):void {
   if (newDeadline.value.length === 0) {
     setErrorFor(newDeadline, 'You need to pick a deadline');
     return;
+  }
+
+  if (categoryImportant.checked === true) {
+    console.log('important');
   }
 
   const index = toDoList.findIndex((task) => task.taskName === newTaskName.value);

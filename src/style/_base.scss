@@ -272,18 +272,12 @@ main{
                     border: none;
                 }
     
-                i, button.editIcon, button.removeIcon{
-                    margin-left: 5px;
+                i, button.removeIcon{
                     position: absolute;
                     cursor: pointer;
                 }
-    
-                .fa-solid.fa-pen-to-square, button.editIcon{
-                    right: 30px;
-                    margin-right: 4px;
-                }
 
-                .fa-solid.fa-pen-to-square, .fa-solid.fa-x{
+                .fa-solid.fa-x{
                     top: 10px;
                     left: 4px;
                 }

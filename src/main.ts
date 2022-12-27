@@ -58,9 +58,6 @@ function printTaskList(): void {
         </label>
         <span class="deadline">${task.deadline}</span>
         <i></i> <!--Till kategori-->
-        <button class="editIcon" aria-label="Edit">
-        <i class="editIcon fa-solid fa-pen-to-square fa-lg" data-id="${index}"></i>
-        </button>
         <button class="removeIcon" aria-label="Remove">
           <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
         </button>
@@ -83,11 +80,6 @@ function printTaskList(): void {
   tasks.forEach((task) => {
     task.addEventListener('click', removeTask); // eslint-disable-line
   });
-
-  /* const editIcons = Array.from(document.querySelectorAll('li i.editIcon'));
-  editIcons.forEach((task) => {
-    task.addEventListener('click', editTask); // eslint-disable-line
-  }); */
 
   const checkbox = Array.from(document.querySelectorAll('.toDoCheckbox'));
   checkbox.forEach((task) => {
@@ -116,20 +108,6 @@ function removeTask(e: Event) {
     printTaskList();
   }
 }
-
-// Funktion för att redigera todo
-// Lägg till kod för att uppdatera input.value
-/* function editTask(e: Event) {
-  const editTarget = e.target as HTMLInputElement;
-  const editIndex = Number(editTarget.dataset.id);
-
-  const input = <HTMLInputElement>document.querySelector('.editInput');
-  input?.removeAttribute('readonly');
-  input.focus();
-  input.addEventListener('blur', e => {
-    input.setAttribute('readonly', true);
-  });
-} */
 
 printTaskList();
 

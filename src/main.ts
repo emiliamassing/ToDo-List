@@ -14,7 +14,7 @@ darkModeBtn?.addEventListener('click', toggleDarkMode);
 
 const incompleteTasksUl: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
 const completedTasksUl: HTMLElement = document.querySelector('#completedTasks') as HTMLElement;
-const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
+let newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
 const newDeadline = <HTMLInputElement>document.querySelector('#date');
 
 // Funktion för att se om deadline passerat
@@ -84,6 +84,11 @@ function printTaskList(): void {
     task.addEventListener('click', removeTask); // eslint-disable-line
   });
 
+  const editIcons = Array.from(document.querySelectorAll('li i.editIcon'));
+  editIcons.forEach((task) => {
+    task.addEventListener('click', editTask); // eslint-disable-line
+  });
+
   const checkbox = Array.from(document.querySelectorAll('.toDoCheckbox'));
   checkbox.forEach((task) => {
     task.addEventListener('change', completeTask); // eslint-disable-line
@@ -113,6 +118,14 @@ function removeTask(e: Event) {
     printTaskList();
   }
 }
+
+// Funktion för att redigera todo
+function editTask() {
+  const input = <HTMLInputElement>document.querySelector('.editInput');
+  input?.removeAttribute('readonly');
+  input.focus();
+}
+
 printTaskList();
 
 // Funktion för felmeddelanden
@@ -159,8 +172,8 @@ function addNewTask(e: Event):void {
     const dateAdded: Date = new Date();
     const deadline: Date = new Date(newDeadline.value);
     const deadlineDate = deadline.toLocaleDateString();
+
     toDoList?.push(new ToDoItem(newTaskName.value, 'household', deadlineDate, dateAdded, false));
-    // localStorage.setItem('todo', JSON.stringify(toDoList));
     printTaskList();
     setSuccessFor(newTaskName);
     setSuccessFor(newDeadline);

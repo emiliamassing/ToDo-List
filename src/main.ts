@@ -14,7 +14,7 @@ darkModeBtn?.addEventListener('click', toggleDarkMode);
 
 const incompleteTasksUl: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
 const completedTasksUl: HTMLElement = document.querySelector('#completedTasks') as HTMLElement;
-let newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
+const newTaskName = <HTMLInputElement>document.querySelector('#writeItem');
 const newDeadline = <HTMLInputElement>document.querySelector('#date');
 
 // Funktion för att se om deadline passerat
@@ -59,7 +59,7 @@ function printTaskList(): void {
         <span class="deadline">${task.deadline}</span>
         <i></i> <!--Till kategori-->
         <button class="editIcon" aria-label="Edit">
-        <i class="editIcon fa-solid fa-pen-to-square fa-lg"></i>
+        <i class="editIcon fa-solid fa-pen-to-square fa-lg" data-id="${index}"></i>
         </button>
         <button class="removeIcon" aria-label="Remove">
           <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
@@ -104,7 +104,6 @@ function completeTask(e: Event) {
   todo.isComplete = true;
   checkboxTarget?.parentElement?.classList.toggle('completed');
   const completedTasks = toDoList.filter((tasks) => tasks.isComplete === true);
-  console.log(completedTasks);
   printTaskList();
 }
 
@@ -112,7 +111,6 @@ function completeTask(e: Event) {
 function removeTask(e: Event) {
   const target = e.target as HTMLElement;
   const index = Number(target.dataset.id);
-  console.log(index);
   if (index !== undefined) {
     toDoList.splice(index, 1);
     printTaskList();
@@ -122,12 +120,14 @@ function removeTask(e: Event) {
 // Funktion för att redigera todo
 // Lägg till kod för att uppdatera input.value
 function editTask(e: Event) {
+  const editTarget = e.target as HTMLInputElement;
+  const editIndex = Number(editTarget.dataset.id);
+
   const input = <HTMLInputElement>document.querySelector('.editInput');
   input?.removeAttribute('readonly');
   input.focus();
   input.addEventListener('blur', e => {
     input.setAttribute('readonly', true);
-    console.log(input.value);
   });
 }
 

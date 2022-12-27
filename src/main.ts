@@ -156,8 +156,8 @@ function addNewTask(e: Event):void {
 
   const index = toDoList.findIndex((task) => task.taskName === newTaskName.value);
   if (index === -1) {
-    const dateAdded = new Date();
-    const deadline = new Date(newDeadline.value);
+    const dateAdded: Date = new Date();
+    const deadline: Date = new Date(newDeadline.value);
     const deadlineDate = deadline.toLocaleDateString();
     toDoList?.push(new ToDoItem(newTaskName.value, 'household', deadlineDate, dateAdded, false));
     // localStorage.setItem('todo', JSON.stringify(toDoList));

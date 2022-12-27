@@ -37,51 +37,6 @@ notis om att punkten lades till - (typ task added)
 
 
 KOD JAG INTE ANVÄNDER - Ta bort när du vet helt säkert att den nya koden fungerar.
-/* for (let i = 0; i < toDoList.length; i++) {
-    const taskName: string = ToDoItem[i].newTaskName as string;
-    /* const taskName = toDoList[i].taskName;
-    const taskNode = document.createElement('li');
-    const taskTextNode = document.createTextNode(taskName); */
-    /*toDoListHtml += `
-    <li>
-      <input type="checkbox" class="checkCompleted">
-      <label>
-        ${taskName}
-        <input type="text">
-      </label>
-      <i class="fa-solid fa-pen-to-square fa-lg" tabindex="0"></i>
-      <i class="fa-solid fa-x fa-lg" tabindex="0"></i>
-    </li> `;*/
-
-    // const editIcon = document.createElement('button');
-    // const editIconTextNode = document.createTextNode('edit');
-    // editIcon.classList.add('i');
-
-    /* const editIcon = document.createElement('i');
-    editIcon.classList.add('fa-solid');
-    editIcon.classList.add('fa-pen-to-square');
-    editIcon.classList.add('fa-lg');
-
-    editIcon.setAttribute('tabindex', '0'); */
-
-    /* const removeIcon = document.createElement('button');
-    const removeIconTextNode = document.createTextNode('Delete');
-    removeIcon.setAttribute('data-name', taskName);
-    removeIcon.appendChild(removeIconTextNode); */
-
-    // Dubbelkolla att nedanstående text är okej innan du raderar de övre blockkomentarerna
-
-    /* const removeIcon = document.createElement('i');
-    removeIcon.classList.add('fa-solid');
-    removeIcon.classList.add('fa-x');
-    removeIcon.classList.add('fa-lg');
-    removeIcon.setAttribute('data-name', taskName);
-
-    taskNode.appendChild(taskTextNode);
-    taskNode.appendChild(editIcon);
-    taskNode.appendChild(removeIcon);
-    incompleteTasks?.appendChild(taskNode); 
-  } */
 
  <li>
       <div class="row">
@@ -101,3 +56,7 @@ KOD JAG INTE ANVÄNDER - Ta bort när du vet helt säkert att den nya koden fung
         </button>
       </div>
     </li> `;
+
+            <button class="editIcon" aria-label="Edit">
+        <i class="editIcon fa-solid fa-pen-to-square fa-lg"></i>
+        </button>

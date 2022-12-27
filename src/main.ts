@@ -140,7 +140,7 @@ function setSuccessFor(input:HTMLInputElement) {
 function addNewTask(e: Event):void {
   e.preventDefault();
 
-  const dateAdded: Date = new Date();
+  const dateAdded = new Date();
   const deadline: Date = new Date(newDeadline.value);
   const deadlineDate = deadline.toLocaleDateString();
   const newTodo = new ToDoItem(newTaskName.value, 'household', deadlineDate, dateAdded, false);

@@ -27,12 +27,6 @@ body{
         }
     }
 
-    .radioInputContainer{
-        label{
-            background-color: var.$toDoWhiteColor;
-        }
-    }
-
     .toDoContainer{
         background-color: var.$toDoWhiteColor;
 
@@ -75,19 +69,6 @@ body{
     .inputContainer{
         input[type=text], input[type=date]{
             background-color: #d5d5d5;
-        }
-    }
-    
-    .radioInputContainer{
-
-        label{
-            background-color: var.$toDoDmColor;
-            border: 2px solid var.$dmBorderColor;
-
-            &:hover{
-                background-color: var.$dmHoverColor;
-                border: 2px solid var.$dmBorderColor;
-            }
         }
     }
     
@@ -147,62 +128,6 @@ main{
     h1{
         text-transform: uppercase;
         text-align: center;
-    }
-
-    .radioInputContainer{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 10px;
-        grid-row-gap: 20px;
-        width: 90%;
-        margin: 0 auto;
-    
-        :hover{
-            transition: 0.3s ease-in-out;
-            background-color: #f7c6ecb9;
-            border: 2px solid #bf7abf;
-        }
-    
-        label{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            border: 2px solid var.$borderColor;
-            border-radius: 4px;
-            cursor: pointer;
-    
-            :hover{
-                border: none;
-            }
-        }
-    
-        input[type=radio]{
-            transform: scale(1.5);
-            margin-bottom: 8px;
-            cursor: pointer;
-        }
-    
-        i.category{
-            margin-right: 3px;
-        }
-
-        .fa-circle-exclamation {
-            color: #ff76be;
-        }
-
-        .fa-briefcase {
-            color: #cc47a9;
-        }
-
-        .fa-star {
-            color: #705ec1;;
-        }
-
-        .fa-house {
-            color: #448ec3;
-        }
     }
     
     .toDoContainer{

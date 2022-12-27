@@ -29,3 +29,82 @@ För VG -
 - Det ska gå att kategorisera uppgifter med hjälp av symboler. Minst 3 kategorier.
 
 Kategorier jag tänkt mig: Ska prioriteras/viktigast, jobb, fritid, hushåll/hem.
+
+KOD JAG INTE ANVÄNDER - Ta bort när du vet garanterat att den inte behövs
+<div class="btnContainer">
+            <span class="text">Add Category</span>
+          </div>
+          <div class="radioInputContainer">
+                <label>
+                  <input type="radio" name="category" id="important">
+                  <span><i class="fa-solid fa-circle-exclamation category"></i>Important</span>
+                </label>
+              <label>
+                <input type="radio" name="category" id="work">
+                <span><i class="fa-solid fa-briefcase category"></i>Work</span>
+              </label>
+              <label>
+                <input type="radio" name="category" id="spareTime">
+                <span><i class="fa-solid fa-star category"></i>Spare Time</span>
+              </label>
+              <label>
+                <input type="radio" name="category" id="household">
+                <span><i class="fa-solid fa-house category"></i>Household</span>
+              </label>
+          </div>
+
+          .radioInputContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 20px;
+        width: 90%;
+        margin: 0 auto;
+    
+        :hover{
+            transition: 0.3s ease-in-out;
+            background-color: #f7c6ecb9;
+            border: 2px solid #bf7abf;
+        }
+    
+        label{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border: 2px solid var.$borderColor;
+            border-radius: 4px;
+            cursor: pointer;
+    
+            :hover{
+                border: none;
+            }
+        }
+    
+        input[type=radio]{
+            transform: scale(1.5);
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+    
+        i.category{
+            margin-right: 3px;
+        }
+
+        .fa-circle-exclamation {
+            color: #ff76be;
+        }
+
+        .fa-briefcase {
+            color: #cc47a9;
+        }
+
+        .fa-star {
+            color: #705ec1;;
+        }
+
+        .fa-house {
+            color: #448ec3;
+        }
+    }

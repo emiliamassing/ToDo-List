@@ -3,13 +3,13 @@ class ToDoItem {
 
   category: string;
 
-  deadline: number;
+  deadline: string;
 
   addedDate: number;
 
   isComplete: boolean;
 
-  constructor(taskName: string, category: string, deadline: number, addedDate: number, isComplete: boolean) {
+  constructor(taskName: string, category: string, deadline: string, addedDate: number, isComplete: boolean) {
     this.taskName = taskName;
     this.category = category;
     this.deadline = deadline;

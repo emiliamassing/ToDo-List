@@ -14,11 +14,6 @@ const newDeadline = <HTMLInputElement>document.querySelector('#date');
 const addTaskBtn = <HTMLButtonElement>document.querySelector('#addItemBtn');
 const sortSelect = <HTMLInputElement>document.querySelector('#sort');
 
-const categoryImportant = <HTMLInputElement>document.querySelector('#important');
-const categoryWork = <HTMLInputElement>document.querySelector('#work');
-const categoryspareTime = <HTMLInputElement>document.querySelector('#spareTime');
-const categoryHouseHold = <HTMLInputElement>document.querySelector('#household');
-
 // Funktion för dark mode
 function toggleDarkMode(): void {
   const bodyElement = document.body;
@@ -61,6 +56,7 @@ function printTaskList(): void {
     <li>
         <input type="checkbox" id="toDoCheckbox" class="toDoCheckbox" data-id="${index}">
         <span>${task.taskName}</span>
+        <span class="chosenCategory"></span>
         <span class="deadline">${task.deadline}</span>
         <button class="removeIcon" aria-label="Remove">
           <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
@@ -144,6 +140,11 @@ function setSuccessFor(input:HTMLInputElement) {
 function addNewTask(e: Event):void {
   e.preventDefault();
 
+  const dateAdded: Date = new Date();
+  const deadline: Date = new Date(newDeadline.value);
+  const deadlineDate = deadline.toLocaleDateString();
+  const newTodo = new ToDoItem(newTaskName.value, 'household', deadlineDate, dateAdded, false);
+
   if (newTaskName.value.length === 0) {
     setErrorFor(newTaskName, 'You need to write something');
     return;
@@ -154,17 +155,9 @@ function addNewTask(e: Event):void {
     return;
   }
 
-  if (categoryImportant.checked === true) {
-    console.log('important');
-  }
-
   const index = toDoList.findIndex((task) => task.taskName === newTaskName.value);
   if (index === -1) {
-    const dateAdded: Date = new Date();
-    const deadline: Date = new Date(newDeadline.value);
-    const deadlineDate = deadline.toLocaleDateString();
-
-    toDoList?.push(new ToDoItem(newTaskName.value, 'household', deadlineDate, dateAdded, false));
+    toDoList?.push(newTodo);
     printTaskList();
     setSuccessFor(newTaskName);
     setSuccessFor(newDeadline);
@@ -175,7 +168,7 @@ function addNewTask(e: Event):void {
 
 addTaskBtn?.addEventListener('click', addNewTask);
 
-// Sortering
+// Funtion för sortering
 function selectSorting() {
   // eslint-disable-next-line default-case
   switch (sortSelect.value) {

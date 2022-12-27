@@ -27,11 +27,8 @@ main{
     .toDoContainer{
         ul{
             li{
-                input[type=text]{
-                    width: 45%;
-                }
 
-                .fa-solid.fa-pen-to-square, .fa-solid.fa-x{
+                .fa-solid.fa-x{
                     margin-top: 5px;
                 }
             }

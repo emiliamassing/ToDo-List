@@ -258,13 +258,6 @@ main{
                     width: 1.3rem;
                     cursor: pointer;
                 }
-
-                input[type=text]{
-                    width: 80%;
-                    appearance: none;
-                    border: none;
-                    background: none;
-                }
                 
                 button{
                     width: 35px;
@@ -278,6 +271,7 @@ main{
                 }
 
                 .fa-solid.fa-x{
+                    margin-top: 5px;
                     top: 10px;
                     left: 4px;
                 }
@@ -299,13 +293,6 @@ main{
 
                 input[type=text]{
                     display: none;
-                }
-            }
-
-            li.completed{
-
-                input[type=text]{
-                    text-decoration: line-through;
                 }
             }
         }

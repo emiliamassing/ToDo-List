@@ -53,9 +53,7 @@ function printTaskList(): void {
     toDoListHtml += `
     <li>
         <input type="checkbox" id="toDoCheckbox" class="toDoCheckbox" data-id="${index}">
-        <label>
-          <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
-        </label>
+        <span>${task.taskName}</span>
         <span class="deadline">${task.deadline}</span>
         <i></i> <!--Till kategori-->
         <button class="removeIcon" aria-label="Remove">

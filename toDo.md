@@ -37,26 +37,3 @@ notis om att punkten lades till - (typ task added)
 
 
 KOD JAG INTE ANVÄNDER - Ta bort när du vet helt säkert att den nya koden fungerar.
-
- <li>
-      <div class="row">
-        <input type="checkbox" id="toDoCheckbox" class="toDoCheckbox" data-id="${index}">
-        <label>
-          <input type="text" value="${task.taskName}" id="editInput" class="editInput" readonly>
-        </label>
-      </div>
-      <div class="row">
-        <span class"deadline">${task.deadline}</span>
-        <i></i> <!--Till kategori-->
-        <button class="editIcon" aria-label="Edit">
-        <i class="editIcon fa-solid fa-pen-to-square fa-lg"></i>
-        </button>
-        <button class="removeIcon" aria-label="Remove">
-          <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
-        </button>
-      </div>
-    </li> `;
-
-            <button class="editIcon" aria-label="Edit">
-        <i class="editIcon fa-solid fa-pen-to-square fa-lg"></i>
-        </button>

@@ -55,7 +55,6 @@ function printTaskList(): void {
         <input type="checkbox" id="toDoCheckbox" class="toDoCheckbox" data-id="${index}">
         <span>${task.taskName}</span>
         <span class="deadline">${task.deadline}</span>
-        <i></i> <!--Till kategori-->
         <button class="removeIcon" aria-label="Remove">
           <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
         </button>

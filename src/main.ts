@@ -125,7 +125,6 @@ function setSuccessFor(input:HTMLInputElement) {
 }
 
 // Funktion för att lägga till ny todo
-// Fixa problemet med att det blir felmeddelanden på rätt input
 function addNewTask(e: Event):void {
   e.preventDefault();
 

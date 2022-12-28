@@ -5,11 +5,11 @@ class ToDoItem {
 
   deadline: string;
 
-  addedDate: number;
+  addedDate: Date;
 
   isComplete: boolean;
 
-  constructor(taskName: string, category: string, deadline: string, addedDate: number, isComplete: boolean) {
+  constructor(taskName: string, category: string, deadline: string, addedDate: Date, isComplete: boolean) {
     this.taskName = taskName;
     this.category = category;
     this.deadline = deadline;

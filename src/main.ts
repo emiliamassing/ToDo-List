@@ -39,13 +39,21 @@ function printTaskList(): void {
   completedTasksUl.innerHTML = '';
   let toDoListHtml = '';
   let toDoCompletedHtml = '';
+  const todaysDate = new Date();
 
   toDoList.forEach((task, index) => {
+    const deadline = new Date(task.deadline);
+    let deadlineCssClass = '';
+    if (deadline < todaysDate) {
+      deadlineCssClass = 'overdue';
+      console.log('rödmarkera');
+    }
+
     if (task.isComplete) {
       toDoCompletedHtml += `
       <li>
         <span>${task.taskName}</span>
-        <span class="deadline">${task.deadline}</span>
+        <span class="deadline ${deadlineCssClass}">${task.deadline}</span>
         <button class="removeIcon" aria-label="Remove">
         <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
         </button>
@@ -57,7 +65,7 @@ function printTaskList(): void {
         <input type="checkbox" id="toDoCheckbox" class="toDoCheckbox" data-id="${index}">
         <span>${task.taskName}</span>
         <span class="chosenCategory"></span>
-        <span class="deadline">${task.deadline}</span>
+        <span class="deadline ${deadlineCssClass}">${task.deadline}</span>
         <button class="removeIcon" aria-label="Remove">
           <i class="removeIcon fa-solid fa-x fa-lg" data-id="${index}"></i>
         </button>
@@ -66,15 +74,6 @@ function printTaskList(): void {
 
   incompleteTasksUl.innerHTML = toDoListHtml;
   completedTasksUl.innerHTML = toDoCompletedHtml;
-
-  const todaysDate = new Date();
-  const deadline = new Date(newDeadline.value); // Hämta deadline från toDoList istället.
-  const span = <HTMLElement>document.querySelector('.deadline');
-
-  if (deadline < todaysDate) {
-    span?.classList.add('overdue');
-    console.log('rödmarkera');
-  }
 
   const tasks = Array.from(document.querySelectorAll('li i.removeIcon'));
   tasks.forEach((task) => {
@@ -140,7 +139,7 @@ function setSuccessFor(input:HTMLInputElement) {
 function addNewTask(e: Event):void {
   e.preventDefault();
 
-  const dateAdded = new Date();
+  const dateAdded: Date = new Date();
   const deadline: Date = new Date(newDeadline.value);
   const deadlineDate = deadline.toLocaleDateString();
   const newTodo = new ToDoItem(newTaskName.value, 'household', deadlineDate, dateAdded, false);
@@ -168,7 +167,7 @@ function addNewTask(e: Event):void {
 
 addTaskBtn?.addEventListener('click', addNewTask);
 
-// Funtion för sortering
+// Funktion för sortering
 function selectSorting() {
   // eslint-disable-next-line default-case
   switch (sortSelect.value) {
@@ -177,7 +176,7 @@ function selectSorting() {
       printTaskList();
       break;
     case 'alfabetic':
-      toDoList.sort((a, b) => { // Fixa felmeddelande
+      toDoList.sort((a, b) => {
         const textA = a.taskName.toLowerCase();
         const textB = b.taskName.toLowerCase();
         if (textA < textB) {
@@ -186,15 +185,16 @@ function selectSorting() {
         if (textA > textB) {
           return 0;
         }
+        return 0;
       });
       printTaskList();
       break;
     case 'lastAdded':
-      toDoList.sort((a, b) => b.addedDate - a.addedDate);
+      toDoList.sort((a, b) => b.addedDate.getTime() - a.addedDate.getTime());
       printTaskList();
       break;
     case 'oldestDate':
-      toDoList.sort((a, b) => a.addedDate - b.addedDate);
+      toDoList.sort((a, b) => a.addedDate.getTime() - b.addedDate.getTime());
       printTaskList();
       break;
   }

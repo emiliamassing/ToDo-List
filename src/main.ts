@@ -22,17 +22,6 @@ function toggleDarkMode(): void {
 
 darkModeBtn?.addEventListener('click', toggleDarkMode);
 
-// Funktion för att se om deadline passerat
-/* function checkDueDate(): void {
-  const todaysDate = new Date();
-  const deadline = new Date(newDeadline.value);
-  const span = <HTMLElement>document.querySelector('.deadline');
-  if (deadline < todaysDate) {
-    span?.classList.add('overdue');
-    console.log('rödmarkera');
-  }
-} */
-
 // Funktion för att skriva ut en ny todo
 function printTaskList(): void {
   incompleteTasksUl.innerHTML = '';
@@ -44,6 +33,7 @@ function printTaskList(): void {
   toDoList.forEach((task, index) => {
     const deadline = new Date(task.deadline);
     let deadlineCssClass = '';
+
     if (deadline < todaysDate) {
       deadlineCssClass = 'overdue';
       console.log('rödmarkera');

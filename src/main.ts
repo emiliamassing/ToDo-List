@@ -65,7 +65,7 @@ function printTaskList(): void {
   incompleteTasksUl.innerHTML = toDoListHtml;
   completedTasksUl.innerHTML = toDoCompletedHtml;
 
-  const tasks = Array.from(document.querySelectorAll('li i.removeIcon'));
+  const tasks = Array.from(document.querySelectorAll('li button.removeIcon'));
   tasks.forEach((task) => {
     task.addEventListener('click', removeTask); // eslint-disable-line
   });

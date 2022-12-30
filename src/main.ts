@@ -3,7 +3,7 @@ import ToDoItem from './toDoItem';
 
 const toDoList: ToDoItem[] = [];
 
-const darkModeBtn = document.querySelector('#darkModeBtn');
+const darkModeBtn = <HTMLButtonElement>document.querySelector('#darkModeBtn');
 
 const incompleteTasksUl: HTMLElement = document.querySelector('#incompleteTasks') as HTMLElement;
 const completedTasksUl: HTMLElement = document.querySelector('#completedTasks') as HTMLElement;
@@ -16,7 +16,7 @@ const sortSelect = <HTMLInputElement>document.querySelector('#sort');
 
 // Funktion för dark mode
 function toggleDarkMode(): void {
-  const bodyElement = document.body;
+  const bodyElement: HTMLElement = document.body;
   bodyElement.classList.toggle('darkMode');
 }
 

@@ -101,26 +101,24 @@ printTaskList();
 
 // Funktion för felmeddelanden
 function setErrorFor(input:HTMLInputElement, message:string) {
-  const formControl = <HTMLElement>document.querySelector('.formControl');
-  const small = <HTMLElement>document.querySelector('small');
-  const icon = <HTMLElement>document.querySelector('.errorIcon');
+  const formControl = <HTMLElement>input.parentElement;
+  const small = <HTMLElement>formControl?.querySelector('small');
+  const icon = <HTMLElement>formControl?.querySelector('.errorIcon');
 
   icon?.classList.remove('toggleHidden');
   small?.classList.remove('toggleHidden');
 
   small.innerText = message;
-  formControl?.classList.add('error');
+  formControl.className = 'formControl error';
 }
 
 // Funktion som tar bort felmeddelanden
 function setSuccessFor(input:HTMLInputElement) {
-  const formControl = <HTMLElement>document.querySelector('.formControl');
-  const small = <HTMLElement>document.querySelector('small');
-  const icon = <HTMLElement>document.querySelector('.errorIcon');
+  const formControl = <HTMLElement>input.parentElement;
+  const small = <HTMLElement>formControl?.querySelector('small');
 
-  icon.classList.add('toggleHidden');
   small.classList.add('toggleHidden');
-  formControl.classList.remove('error');
+  formControl.className = 'formControl';
 }
 
 // Funktion för att lägga till ny todo

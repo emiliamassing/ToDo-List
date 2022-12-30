@@ -36,7 +36,6 @@ function printTaskList(): void {
 
     if (deadline < todaysDate) {
       deadlineCssClass = 'overdue';
-      console.log('rödmarkera');
     }
 
     if (task.isComplete) {

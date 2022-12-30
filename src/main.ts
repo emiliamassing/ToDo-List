@@ -130,7 +130,7 @@ function addNewTask(e: Event):void {
   const dateAdded: Date = new Date();
   const deadline: Date = new Date(newDeadline.value);
   const deadlineDate = deadline.toLocaleDateString();
-  const newTodo = new ToDoItem(newTaskName.value, 'household', deadlineDate, dateAdded, false);
+  const newTodo = new ToDoItem(newTaskName.value, deadlineDate, dateAdded, false);
 
   if (newTaskName.value.length === 0) {
     setErrorFor(newTaskName, 'You need to write something');
